@@ -1,0 +1,253 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+i{
+  color: #fff;
+ }
+
+/* cabeçalho */
+
+.cabeçalho{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c1c1c;
+  color: rgb(255, 255, 255);
+  height: 90px;
+  width: 100vw;
+}
+#cadastro{
+  width: 50px;
+  position: relative;
+  margin-right: 20px;
+  filter: brightness(100%);
+  transition: 0.3s ease;
+}
+#cadastro:hover{
+ transform: scale(1.2);
+}
+.cabeçalho .logo{
+  position: relative;
+  height: 90px;
+  transition: 0.3s ease;
+}
+.cabeçalho .logo:hover{
+ transform: scale(1.2);
+}
+.cabeçalho h1{
+  font-size: 20px;
+}
+
+
+/* fim do Cabeçalho */
+
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  width: 100vw;
+  position: relative;
+  padding: 0 25px;
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 27, 78), #000000, #0252ca);
+  background-size: 300% 300%;
+  animation: colors 10s ease infinite;
+}
+
+@keyframes colors{
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.wrapper #left, #right {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+  
+}
+.wrapper #left, #right:first-child{
+  left: -22px;
+  margin-left: 25px;
+  
+}
+.wrapper #left, #right:last-child{
+  right: -22px;
+  margin-right: 25px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+  
+}
+.carousel .card .img {
+  background: #1c1c1c;
+  height: 148px;
+  width: 148px;
+  border-radius: 50%;
+}
+.card .img img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 10px 0 10px;
+}
+.carousel .card h2 img {
+  padding: 0 5px;
+  width: 45px;
+}
+.carousel .card span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+  margin-bottom: 15px;
+}
+
+.carousel .card button{
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  border: none;
+}
+
+.carousel .card button:hover{
+  background-color: #000000;
+  transition: all 0.5s;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+
+/* ==== Footer ==== */
+
+.rodapé{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c1c;
+  color: rgb(255, 255, 255);
+  height: 100px;
+}
+
+.rodapé  ul{
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.rodapé ul li{
+  padding: 50px;
+  transition: 0.3s ease;
+}
+.rodapé ul li:hover{
+ transform: scale(1.2);
+}
+
+@media (max-width: 480px){
+  .rodapé ul {
+    width: 20px;
+    justify-content: center;
+  }
+  .rodapé ul li {
+    padding: 30px;
+  }
+}
+@media (max-width: 510px){
+  .rodapé ul {
+    width: 20px;
+    justify-content: center;
+  }
+}
