@@ -2,7 +2,6 @@
 session_start();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -11,6 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logotriangulotransparente.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="./assets/js/main.js" defer></script>
   </head>
   <body>
@@ -25,52 +25,53 @@ session_start();
   ?>
 
     <div class="cabeçalho">
-      <a href="#" class="btn-cad"><img class="logo" type="button" src="./img/logotriangulotransparente.png"></a>
-      
+      <div id="logo-container"><a href="#"><img class="logo" type="button" src="./img/logotriangulotransparente.png"></a>
+        <h2>Flyvoo</h2>
+      </div>
         <a href="./form/cadastro.html" target="blank"><img src="./img/img1w.png" id="cadastro"></a>
       <!--<button class="btn-cad" href="#"><img src="/assets/img/cadastro.png"></button>-->
     </div>
     <div class="wrapper">
-      <img id="left" src="./img/L.png">
-      <ul class="carousel">
+      <i class="bi bi-arrow-left-circle-fill" id="left"></i>
+    <ul class="carousel">
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><img src="./img/star_empty.png"><img src="./img/star_empty.png"><img src="./img/star_empty.png"></h2>
-          <span>Lógica 1</span>
+          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-half" ></i><i class="bi bi-star"></i></h2>
+          <h2>Lógica 1</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><img src="./img/star_empty.png"><img src="./img/star_empty.png"><img src="./img/star_empty.png"></h2>
-          <span>Lógica 2</span>
+          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2>Lógica 2</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><img src="./img/star_empty.png"><img src="./img/star_empty.png"><img src="./img/star_empty.png"></h2>
-          <span>Design</span>
+          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2>Lógica 3</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><img src="./img/star_empty.png"><img src="./img/star_empty.png"><img src="./img/star_empty.png"></h2>
-          <span>Design</span>
+          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2>Lógica 4</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><img src="./img/star_empty.png"><img src="./img/star_empty.png"><img src="./img/star_empty.png"></h2>
-          <h2>Rafael Lucilio</h2>
-          <span>Design</span>
+          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2>Lógica 5</h2>
+          <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><img src="./img/star_empty.png"><img src="./img/star_empty.png"><img src="./img/star_empty.png"></h2>
-          <h2>Danilo Carvalho</h2>
-          <span>Developer & Design</span>
+          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2>Lógica 6</h2>
+          <button>Iniciar</button>
         </li>
       </ul>
-      <img id="right" src="./img/R.png">
+      <i class="bi bi-arrow-right-circle-fill" id="right"></i>
     </div>
     <footer class="rodapé">
       <ul class="nav-header">

@@ -1,5 +1,9 @@
 /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Bootstrap icons import */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +21,9 @@ body {
   min-height: 100vh;
 }
 i{
-  color: #fff;
+  font-size: 32px;
+  color: yellow;
+  margin: 5px;
  }
 
 /* cabeçalho */
@@ -41,17 +47,21 @@ i{
 #cadastro:hover{
  transform: scale(1.2);
 }
-.cabeçalho .logo{
-  position: relative;
+#logo-container{
+  display: flex;
+  align-items: center;
+}
+#logo-container .logo{
   height: 90px;
   transition: 0.3s ease;
 }
-.cabeçalho .logo:hover{
+#logo-container h2{
+  cursor: pointer;
+}
+.cabeçalho .logo-container .logo:hover{
  transform: scale(1.2);
 }
-.cabeçalho h1{
-  font-size: 20px;
-}
+
 
 
 /* fim do Cabeçalho */
@@ -82,24 +92,20 @@ i{
     background-position: 0% 50%;
   }
 }
-
-
-
 .wrapper #left, #right {
-  top: 50%;
   height: 50px;
   width: 50px;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 3rem;
   position: absolute;
   text-align: center;
   line-height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
-  transform: translateY(-50%);
+  color: #fff !important;
   transition: transform 0.1s linear;
-  
+  transition: 0.3s ease;
+}
+.wrapper #left:hover, #right:hover {
+  transform: scale(1.2);
 }
 .wrapper #left, #right:first-child{
   left: -22px;
@@ -144,7 +150,6 @@ i{
   scroll-snap-align: start;
   height: 342px;
   list-style: none;
-  background: #fff;
   cursor: pointer;
   padding-bottom: 15px;
   flex-direction: column;
@@ -168,6 +173,7 @@ i{
   font-weight: 500;
   font-size: 1.56rem;
   margin: 10px 0 10px;
+  color:#fff;
 }
 .carousel .card h2 img {
   padding: 0 5px;
@@ -180,12 +186,13 @@ i{
 }
 
 .carousel .card button{
-  background-color: #1c1c1c;
+  background-color: #ffffff;
   border-radius: 20px;
   width: 120px;
   height: 40px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   border: none;
+  margin-top: 20px;
 }
 
 .carousel .card button:hover{
