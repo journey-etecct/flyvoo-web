@@ -35,15 +35,15 @@ session_start();
       <i class="bi bi-arrow-left-circle-fill" id="left"></i>
     <ul class="carousel">
         <li class="card">
-          <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
+          <div class="img"><img src="./img/logica.png" alt="img" draggable="false"></div>
           <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-half" ></i><i class="bi bi-star"></i></h2>
           <h2>Lógica 1</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
-          <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
+          <div class="img"><img src="./img/calculo.png" alt="img" draggable="false"></div>
           <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
-          <h2>Lógica 2</h2>
+          <h2>Cálculo 1</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
