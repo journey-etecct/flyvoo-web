@@ -6,14 +6,23 @@ session_start();
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Flyvoo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/logotriangulotransparente.png" type="image/x-icon">
+    
+    <!--icone-->
+    <link rel="shortcut icon" href="../img/logotriangulotransparente.png" type="image/x-icon">
+    
+    <!--links-->
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="./assets/js/main.js" defer></script>
+
+    <title>Flyvoo</title>
+    
   </head>
   <body>
+
+  <!--PHP que pega as informações salvas da sessão-->
 
   <?php
         if(isset($_SESSION['id']) and (isset($_SESSION['nome']))){
@@ -25,7 +34,7 @@ session_start();
   ?>
 
     <div class="cabeçalho">
-      <div id="logo-container"><a href="#"><img class="logo" type="button" src="./img/logotriangulotransparente.png"></a>
+      <div id="logo-container"><a href="#"><img class="logo" type="button" src="../img/logotriangulotransparente.png"></a>
         <h2>Flyvoo</h2>
       </div>
         <a href="./form/cadastro.html" target="blank"><img src="./img/img1w.png" id="cadastro"></a>
@@ -37,19 +46,19 @@ session_start();
         <li class="card">
           <div class="img"><img src="./img/logica.png" alt="img" draggable="false"></div>
           <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-half" ></i><i class="bi bi-star"></i></h2>
-          <h2>Lógica 1</h2>
+          <h2>Sobre mim</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/calculo.png" alt="img" draggable="false"></div>
           <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
-          <h2>Cálculo 1</h2>
+          <h2>Raciocínio lógico</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
           <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
-          <h2>Lógica 3</h2>
+          <h2>Cultura</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
