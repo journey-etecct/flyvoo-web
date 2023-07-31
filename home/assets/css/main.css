@@ -85,7 +85,12 @@ i{
 }
 
 .conteudo .start{
+    display: flex;
+    flex-direction: column;
     color: white;
+    width: 300px;
+    margin-block: 300px;
+    margin-inline: 100px;
 }
 
 .conteudo .start h1{
