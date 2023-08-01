@@ -1,8 +1,8 @@
 <?php
 
-    require "./home_assets/head.html";
+    require "./index_assets/head.html";
 
-    require "./home_assets/footer.html";
+    require "./index_assets/footer.html";
 
 
 ?>
