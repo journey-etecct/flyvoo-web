@@ -1,0 +1,103 @@
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+    font-family: 'Georama', sans-serif;
+    background-color: black;
+    background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+    );
+}
+
+.head {
+    width: 100%;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    color: white;
+
+}
+
+.fly-head {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 20%;
+}
+
+.link-head {
+    margin-left: 5%;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-head {
+    margin-left: 5%;
+    margin-right: 3%;
+    position: relative;
+    width: 9em;
+    height: 3.2em;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: 2s;
+}
+
+.btn-head::before {
+    content: '';
+    width: 20em;
+    height: 20em;
+    position: absolute;
+    background-image: conic-gradient(#da3c9b, #FC6767, #e24c4c, #ED57B0);
+    animation: animate 2s linear infinite;
+}
+
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .btn-head span {
+        position: absolute;
+        inset: 0.15em;
+        border-radius: 10px;
+        background: black;
+        z-index: 1;
+    }
+
+    .btn-head p {
+        position: relative;
+        color: white;
+        z-index: 2;
+    }
+
+    .btn-head:hover {
+        cursor: pointer;
+    }
+
+.btn-head-fill {
+    background-image: linear-gradient( to right, #ED57B0, #FC6767 );
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding-right: 1.5%;
+    padding-bottom: 0.8%;
+    padding-top: 0.8%;
+    padding-left: 1.5%;
+    transition: 2s;
+}
+
+.btn-head-fill:hover {
+    background-image: linear-gradient( to right, #e259ab, #cf5050 );
+    cursor: pointer;
+}

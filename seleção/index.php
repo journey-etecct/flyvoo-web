@@ -14,7 +14,7 @@ session_start();
     
     <!--links-->
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <script src="./assets/js/main.js" defer></script>
 
     <title>Flyvoo</title>
@@ -35,47 +35,47 @@ session_start();
 
     <div class="cabeçalho">
       <div id="logo-container"><a href="#"><img class="logo" type="button" src="../img/logotriangulotransparente.png"></a>
-        <h2>Flyvoo</h2>
+        <h2>FLYVOO</h2>
       </div>
-        <a href="./form/cadastro.html" target="blank"><img src="./img/img1w.png" id="cadastro"></a>
+        <a href="../form/cadastro.html" target="blank"><img src="./img/img1w.png" id="cadastro"></a>
       <!--<button class="btn-cad" href="#"><img src="/assets/img/cadastro.png"></button>-->
     </div>
     <div class="wrapper">
       <i class="bi bi-arrow-left-circle-fill" id="left"></i>
     <ul class="carousel">
         <li class="card">
-          <div class="img"><img src="./img/logica.png" alt="img" draggable="false"></div>
-          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-half" ></i><i class="bi bi-star"></i></h2>
+          <div class="img"><img src="./img/sobremim.png" alt="img" draggable="false"></div>
+          <h2><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></h2>
           <h2>Sobre mim</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/calculo.png" alt="img" draggable="false"></div>
-          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2><i class="bi bi-star"></i><i i class="bi bi-star"></i><i i class="bi bi-star"></i></h2>
           <h2>Raciocínio lógico</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
-          <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <div class="img"><img src="./img/lampada.png" alt="img" draggable="false"></div>
+          <h2><i i class="bi bi-star"></i><i i class="bi bi-star"></i><i class="bi bi-star"></i></h2>
           <h2>Cultura</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
-          <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
-          <h2>Lógica 4</h2>
+          <div class="img"><img src="./img/ingles.png" alt="img" draggable="false"></div>
+          <h2><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></h2>
+          <h2>Inglês básico</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></h2>
           <h2>Lógica 5</h2>
           <button>Iniciar</button>
         </li>
         <li class="card">
           <div class="img"><img src="./img/foto1.jpg" alt="img" draggable="false"></div>
-          <h2><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h2>
+          <h2><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></h2>
           <h2>Lógica 6</h2>
           <button>Iniciar</button>
         </li>
