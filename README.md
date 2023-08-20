@@ -3,6 +3,6 @@
 
 Como abrir e testar?
 
-- Instale o projeto na sua máquina e abra o index.php, através dele dependendo da versão que você está, você terá acesso ás demais telas.
-
-Não esqueça de olhar no "package.json", as dependencias necessárias para rodar o projeto.
+- Instale o Angular CLI na sua máquina com `npm install -g @angular/cli`;
+- Builde o projeto com `ng build --prod`;
+- O projeto estará disponível na pasta `dist/flyvoo-web`
