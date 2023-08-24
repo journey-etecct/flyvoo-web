@@ -2,11 +2,19 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
+  let eita: string;
+  async function nosfa(issomesmo: string) {
+    await fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((res) => (eita = JSON.stringify(res)));
+    return issomesmo + eita;
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
+        <p id="sim">
+          {nosfa("eita")}&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
         <div>
