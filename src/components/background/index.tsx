@@ -5,6 +5,8 @@ export function Background() {
     <video
       autoPlay
       loop
+      controls={false}
+      style={{ pointerEvents: "none" }}
       src="/background/dark.webm"
       className="videoFundo"
     ></video>
@@ -14,6 +16,7 @@ export function Background() {
       loop
       src="/background/light.webm"
       controls={false}
+      style={{ pointerEvents: "none" }}
       className="videoFundo"
     ></video>
   );

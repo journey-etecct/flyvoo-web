@@ -3,9 +3,7 @@
 import Image from "next/image";
 import style from "./style.module.css";
 import "@/app/globals.css";
-import Link from "next/link";
-import $ from "jquery";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -51,8 +49,6 @@ export default function Navbar() {
       <div style={{ display: "flex", alignItems: "center" }}>
         <NavLink
           to={"/sobre"}
-          /* routerLinkActive="selecionado"
-          routerLink="/sobre" */
           className={({ isActive, isPending }) =>
             isActive ? `${style.linkHead} ${style.selecionado}` : style.linkHead
           }
@@ -61,8 +57,6 @@ export default function Navbar() {
         </NavLink>
         <NavLink
           to={"/contato"}
-          /* routerLinkActive="selecionado"
-          routerLink="/contato" */
           className={({ isActive, isPending }) =>
             isActive ? `${style.linkHead} ${style.selecionado}` : style.linkHead
           }
@@ -71,8 +65,6 @@ export default function Navbar() {
         </NavLink>
         <NavLink
           to="/entrar"
-          /* routerLinkActive="selecionado"
-          routerLink="/entrar" */
           className={({ isActive, isPending }) =>
             isActive
               ? `${style.btnHeadFill} ${style.selecionado}`

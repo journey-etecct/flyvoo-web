@@ -1,7 +1,7 @@
 "use client";
 import Navbar from "@/components/navbar";
 import "./globals.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Inicio from "./inicio";
 import Contato from "./contato";
 import Sobre from "./sobre";
@@ -9,7 +9,7 @@ import EntrarCadastro from "./entrarCadastro";
 
 export default function Root() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
       <div className="testa">
         <Routes>
@@ -19,6 +19,6 @@ export default function Root() {
           <Route path="/entrar" Component={EntrarCadastro}></Route>
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }

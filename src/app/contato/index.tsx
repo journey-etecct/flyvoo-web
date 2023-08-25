@@ -1,3 +1,3 @@
 export default function Contato() {
-  return <p>naaaao</p>;
+  return <p>contato sim</p>;
 }
