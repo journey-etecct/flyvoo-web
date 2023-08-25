@@ -1,33 +1,24 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Navbar from "@/components/navbar/navbar";
-import { cookies } from "next/headers";
+"use client";
+import Navbar from "@/components/navbar";
 import "./globals.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Inicio from "./inicio";
+import Contato from "./contato";
+import Sobre from "./sobre";
+import EntrarCadastro from "./entrarCadastro";
 
-function Background() {
-  return cookies().get("dark")?.value ?? true ? (
-    <video
-      autoPlay
-      loop
-      src="/background/dark.webm"
-      className="videoFundo"
-    ></video>
-  ) : (
-    <video
-      autoPlay
-      loop
-      src="/background/light.webm"
-      controls={false}
-      className="videoFundo"
-    ></video>
-  );
-}
-
-export default function Home() {
+export default function Root() {
   return (
-    <>
-      <Background />
-      {cookies().get("cadastrado")?.value ?? true ? <Navbar /> : <></>}
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <div className="testa">
+        <Routes>
+          <Route path="/" Component={Inicio} index></Route>
+          <Route path="/sobre" Component={Sobre}></Route>
+          <Route path="/contato" Component={Contato}></Route>
+          <Route path="/entrar" Component={EntrarCadastro}></Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
