@@ -1,3 +1,7 @@
+:root {
+  --btnPrimaryDark: rgba(0, 255, 240, 0.37);
+}
+
 body {
   margin: 0 auto;
   padding: 0;

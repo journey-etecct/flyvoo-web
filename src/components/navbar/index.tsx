@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import style from "./style.module.css";
+import style from "./index.module.css";
 import "@/app/globals.css";
 import { useState } from "react";
 import React from "react";
