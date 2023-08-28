@@ -1,0 +1,52 @@
+.flyBox {
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.flyItens {
+  display: block;
+}
+
+.txt {
+  font-family: "Georama", sans-serif;
+  font-size: 400%;
+  color: white;
+}
+
+.flyDesc {
+  font-family: "Georama", sans-serif;
+  font-weight: 300;
+  font-size: 150%;
+  color: white;
+  margin-bottom: 10%;
+}
+
+.flyStart {
+  font-family: "Georama", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding-left: 41.3%;
+  padding-right: 41.3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 50px;
+  background-image: linear-gradient(to right, #e259ab, #cf5050);
+}
+
+.flyStart:hover {
+  background-image: linear-gradient(to right, #ed57b0, #fc6767);
+  cursor: pointer;
+}
+
+.flyImg {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  object-fit: cover;
+}

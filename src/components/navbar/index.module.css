@@ -1,0 +1,104 @@
+.head {
+  top: 0;
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  color: white;
+  padding: 0 1em;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 7.5vh;
+  background-color: transparent;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 300ms, scale 100ms;
+}
+
+.logo:active {
+  scale: 0.9;
+}
+
+.luz {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+  width: 10em;
+  height: 10em;
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: opacity 500ms;
+}
+
+.logo img {
+  width: 84px;
+  height: 64px;
+  object-fit: cover;
+  margin: 0 10px;
+}
+
+.flyHead {
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 1em;
+  font-family: "Georama", sans-serif;
+}
+
+.linkHead {
+  text-align: center;
+  font-size: 110%;
+  margin-right: 2em;
+  color: white;
+  text-decoration: none;
+  font-family: "Georama", sans-serif;
+  font-weight: 500;
+  padding: 12px 20px;
+  overflow: hidden;
+  transition: background-color 300ms, scale 100ms;
+  position: relative;
+  border-radius: 50px;
+}
+
+.linkHead:active,
+.btnHeadFill:active {
+  scale: 0.9;
+}
+
+.linkHead:hover,
+.btnHeadFill:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logo.selecionado {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.linkHead.selecionado,
+.btnHeadFill.selecionado {
+  background-color: rgba(0, 255, 240, 0.37);
+}
+
+.btnHeadFill {
+  text-align: center;
+  font-size: 130%;
+  margin-right: 2em;
+  color: white;
+  text-decoration: none;
+  font-family: "Georama", sans-serif;
+  font-weight: 500;
+  padding: 12px 20px;
+  overflow: hidden;
+  transition: background-color 300ms, scale 100ms;
+  position: relative;
+  border-radius: 50px;
+}
