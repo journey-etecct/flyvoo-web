@@ -13,12 +13,12 @@ export default function Navbar() {
 
   function hoverHome() {
     setLuzOpacidade(1);
-    window.addEventListener("mousemove", funcaoEventoLogo, true);
+    window.addEventListener("mousemove", funcaoEventoLogo);
   }
 
   function removerListener() {
     setLuzOpacidade(0);
-    window.removeEventListener("mousemove", funcaoEventoLogo, true);
+    window.removeEventListener("mousemove", funcaoEventoLogo);
   }
 
   function funcaoEventoLogo(evento: MouseEvent) {
