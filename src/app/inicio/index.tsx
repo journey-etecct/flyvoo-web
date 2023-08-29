@@ -2,12 +2,19 @@ import Image from "next/image";
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Georama } from "next/font/google";
+import { motion } from "framer-motion";
+import { reverse } from "@/components/navbar";
 
 const georama = Georama({ subsets: ["latin"] });
 
 export default function Inicio() {
   return (
-    <div className={styles.flyBox}>
+    <motion.div
+      className={styles.flyBox}
+      style={{ position: "absolute" }}
+      initial={{ opacity: 0, left: reverse ? -50 : 50 }}
+      animate={{ opacity: 1, left: 0 }}
+    >
       <div className={styles.flyItens}>
         <h1 className={styles.txt} style={georama.style}>
           Sua jornada começa <br />
@@ -27,6 +34,6 @@ export default function Inicio() {
         height={550}
         alt="Duas pessoas analisando um gráfico"
       />
-    </div>
+    </motion.div>
   );
 }
