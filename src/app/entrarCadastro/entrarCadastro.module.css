@@ -1,0 +1,31 @@
+.formEntrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Email{
+    border: none;
+    background-color: #525252;
+    color: #FFFFFF;
+    border-radius: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.Email::placeholder{
+    color: #FFFFFF;
+}
+
+.Senha{
+    border: none;
+    background-color: #525252;
+    color: #FFFFFF;
+    border-radius: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.Senha::placeholder{
+    color: #FFFFFF;
+}
