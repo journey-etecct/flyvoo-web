@@ -26,6 +26,10 @@ body {
 *:after {
   box-sizing: inherit;
   -webkit-user-drag: none;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 * {
