@@ -3,7 +3,9 @@ import { cookies } from "next/headers";
 export function Background() {
   return cookies().get("dark")?.value ?? true ? (
     <video
+      playsInline
       autoPlay
+      muted
       loop
       controls={false}
       style={{ pointerEvents: "none" }}
@@ -12,7 +14,9 @@ export function Background() {
     ></video>
   ) : (
     <video
+      playsInline
       autoPlay
+      muted
       loop
       src="/background/light.webm"
       controls={false}
