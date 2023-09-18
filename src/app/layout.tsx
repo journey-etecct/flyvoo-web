@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Flyvoo",
   description: "Site para decisão precisa da sua vida profissional.",
+  creator: "Journey",
 };
 
 export default function RootLayout({
