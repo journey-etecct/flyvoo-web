@@ -33,6 +33,7 @@ export default function Inicio() {
           width={800}
           height={550}
           alt="Duas pessoas analisando um gráfico"
+          priority
         />
       </div>
     </motion.div>
