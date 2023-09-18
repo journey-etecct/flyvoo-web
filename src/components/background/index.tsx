@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-export function Background() {
+export default function Background() {
   return cookies().get("dark")?.value ?? true ? (
     <video
       playsInline
