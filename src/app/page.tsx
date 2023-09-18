@@ -14,7 +14,7 @@ export default function Root() {
   if (logado)
     return (
       <Router>
-        {/* USUÁRIO NÃO LOGADO */}
+        {/* USUÁRIO LOGADO */}
         <Navbar />
         <div className="testa">
           <AnimatePresence>
@@ -31,7 +31,7 @@ export default function Root() {
   else
     return (
       <Router>
-        {/* USUÁRIO LOGADO */}
+        {/* USUÁRIO NÃO LOGADO */}
         <Navbar />
         <div className="testa">
           <AnimatePresence>

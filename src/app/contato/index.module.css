@@ -1,0 +1,118 @@
+/* Geral */
+.pageContainer {
+  display: flex;
+  justify-content: space-between;
+  flex: auto;
+  padding: 0 2% 5em 2%;
+}
+
+.titulo {
+  font-size: 5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Primeira div */
+.contatoContainer {
+  display: flex;
+  border: 3px solid white;
+  border-radius: 20px;
+  background-color: #36363ca4;
+}
+
+.infoContainer {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mapa {
+  width: 30em;
+  height: 100%;
+}
+
+.mapaContainer {
+  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Form */
+.label {
+  color: white;
+  font-weight: bold;
+  margin: 0.5em 0;
+  margin-inline: 1.5em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.input,
+.textarea,
+.enviarButton {
+  width: 100%;
+  padding: 0.7em;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.enviarButton {
+  margin-top: 1em;
+  max-width: 190px;
+  align-self: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.input {
+  width: 100%;
+  background-color: rgba(97, 96, 100, 0.467);
+  box-shadow: 0 0 10px rgba(97, 96, 100, 0.2);
+  color: white;
+  max-width: 250px;
+  margin-bottom: 1em;
+  align-self: center;
+}
+
+.textarea {
+  background-color: #61606494;
+  box-shadow: 0 0 10px rgba(97, 96, 100, 0.2);
+  color: white;
+  max-height: 160px;
+  max-width: 250px;
+  align-self: center;
+  resize: none;
+  overflow-y: auto;
+}
+
+.buttonContainer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.enviarButton {
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #24837c;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.enviarButton:hover {
+  background-color: #1a635f;
+}
+
+/* Segunda Div */
+.imagemContainer {
+  margin-left: 20px;
+  width: 40em;
+  height: 100%;
+  position: relative;
+}

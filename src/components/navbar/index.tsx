@@ -40,7 +40,7 @@ export default function Navbar() {
       >
         <motion.div
           ref={ref}
-          animate={{ x, y }}
+          animate={{ x: x - 15, y: y - 15 }}
           className={style.luz}
           transition={{ delay: 0, duration: 0 }}
           style={{ opacity: luzOpacidade }}

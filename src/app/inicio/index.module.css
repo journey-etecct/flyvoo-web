@@ -5,7 +5,6 @@
   justify-content: space-around;
   padding: 0 5em;
   display: flex;
-  flex-direction: row;
 }
 
 .flyItens {
@@ -32,6 +31,11 @@
   color: white;
   border-radius: 50px;
   background-color: var(--btnPrimaryDark);
+  padding: 1em 5em;
+}
+
+.flyStart:active {
+  opacity: 0.5;
 }
 
 .flyImg {

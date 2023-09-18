@@ -23,6 +23,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.54.1",
     "@types/jquery": "^3.5.17"
   }
 }
