@@ -3,6 +3,7 @@
 
 :root {
   --btnPrimaryDark: rgba(0, 255, 240, 0.37);
+  --btnPrimaryHover: rgba(0, 255, 238, 0.4);
 }
 
 ::-webkit-scrollbar {

@@ -36,6 +36,12 @@
   border-radius: 50px;
   background-color: var(--btnPrimaryDark);
   padding: 1em 5em;
+  opacity: 1;
+  transition: opacity 100ms, background-color 100ms;
+}
+
+.flyStart:hover {
+  background-color: var(--btnPrimaryHover);
 }
 
 .flyStart:active {
