@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   overflow: visible;
-  transition: background-color 250ms, border-radius 250ms, scale 250ms;
+  transition: background-color 250ms, border-radius 250ms;
 }
 
 .item::after {
@@ -34,6 +34,7 @@
 .item span {
   font-size: 3em;
   color: white;
+  transition: scale 250ms;
 }
 
 .item:hover {
@@ -42,7 +43,7 @@
   cursor: pointer;
 }
 
-.item:active {
+.item:active span {
   scale: 0.9;
 }
 
