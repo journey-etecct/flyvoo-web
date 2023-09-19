@@ -1,8 +1,10 @@
 .containerIcones {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
   margin: 1em;
-  padding: 0.8em 1em 2em;
-  border-radius: 23px;
+  padding: 1em;
+  border-radius: 25px;
+  z-index: 7;
+  position: fixed;
 }
 
 .item {
@@ -19,7 +21,7 @@
 .item::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: 0;
   width: 0%;
   height: 6px;
   border-radius: 50px;
@@ -38,15 +40,52 @@
 }
 
 .item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
   cursor: pointer;
 }
 
 .item:active span {
-  scale: 0.9;
+  scale: 0.8;
 }
 
 .item.escolhido::after {
   width: 70%;
+}
+
+.containerNomes {
+  position: absolute;
+  top: 0;
+  margin: 1em 0 0 1em;
+  padding: 1em 0;
+  background-color: #161616;
+  width: 6em;
+  z-index: 4;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: width ease 500ms;
+}
+
+.nome {
+  margin: 0;
+  height: 5em;
+  padding-left: 9em;
+  display: flex;
+  align-items: center;
+}
+
+.nome:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.nome .p {
+  font-size: x-large;
+}
+
+.containerIcones:hover + .containerNomes {
+  width: 20em;
+}
+
+.containerNomes:hover {
+  width: 20em;
 }

@@ -68,3 +68,11 @@ div.animacao {
   display: flex;
   align-items: stretch;
 }
+
+#conteudo {
+  transition: filter 250ms;
+}
+
+#navbar:hover + #conteudo {
+  filter: blur(2px);
+}

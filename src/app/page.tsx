@@ -19,13 +19,24 @@ export default function Root() {
     return (
       <Router>
         {/* USUÁRIO LOGADO */}
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
           <NavbarHome />
-          <AnimatePresence>
-            <Routes>
-              <Route path="/" Component={Home} index></Route>
-            </Routes>
-          </AnimatePresence>
+          <div
+            style={{
+              marginLeft: "9em",
+              position: "absolute",
+              width: "calc(100% - 9em)",
+              height: "100%",
+              zIndex: "2",
+            }}
+            id="conteudo"
+          >
+            <AnimatePresence>
+              <Routes>
+                <Route path="/" Component={Home} index></Route>
+              </Routes>
+            </AnimatePresence>
+          </div>
         </div>
       </Router>
     );
