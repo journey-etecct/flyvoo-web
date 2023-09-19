@@ -1,4 +1,4 @@
-import { reverse } from "@/components/navbar";
+import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./index.module.css";
@@ -39,6 +39,7 @@ export default function Sobre() {
       <div className={styles.flyImg}>
         <Image
           src="/img/amico.svg"
+          priority
           width={669.4}
           height={598}
           alt="Diversas pessoas trabalhando em diferentes locais de uma sala, todas usando notebook"

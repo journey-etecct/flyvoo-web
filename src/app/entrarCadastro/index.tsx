@@ -1,4 +1,4 @@
-import { reverse } from "@/components/navbar";
+import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import styles from "./entrarCadastro.module.css";
 
@@ -12,12 +12,20 @@ export default function EntrarCadastro() {
       <div className={styles.form}>
         <div className={styles.formEntrar}>
           <h1>Entrar</h1>
-          <input className={styles.Email} type="email" name="email" placeholder="Email"></input>
-          <input className={styles.Senha} type="password" name="senha" placeholder="senha"></input>
+          <input
+            className={styles.Email}
+            type="email"
+            name="email"
+            placeholder="Email"
+          ></input>
+          <input
+            className={styles.Senha}
+            type="password"
+            name="senha"
+            placeholder="senha"
+          ></input>
         </div>
-          <div className={styles.formCadastrar}>
-
-        </div>
+        <div className={styles.formCadastrar}></div>
       </div>
     </motion.div>
   );

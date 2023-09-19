@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Georama } from "next/font/google";
 import { motion } from "framer-motion";
-import { reverse } from "@/components/navbar";
+import { reverse } from "@/components/navbar_inicio";
 
 export const georama = Georama({ subsets: ["latin"] });
 

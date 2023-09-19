@@ -1,0 +1,51 @@
+.containerIcones {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 1em;
+  padding: 0.8em 1em 2em;
+  border-radius: 23px;
+}
+
+.item {
+  width: 5em;
+  height: 5em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  transition: background-color 250ms, border-radius 250ms, scale 250ms;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 0%;
+  height: 6px;
+  border-radius: 50px;
+  background-color: white;
+  transition: width ease 250ms;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.item span {
+  font-size: 3em;
+  color: white;
+}
+
+.item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.item:active {
+  scale: 0.9;
+}
+
+.item.escolhido::after {
+  width: 70%;
+}
