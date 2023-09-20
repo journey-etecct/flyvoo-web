@@ -1,0 +1,222 @@
+/*
+(1) Regras gerais do Form como um todo
+*
+*
+(2) Regras do Form Entrar
+*
+*
+(3) Regras do Form Cadastrar
+*/
+
+/* 1- Form */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 90vh;
+}
+
+.container input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.form {
+  display: flex;
+}
+
+.form h1 {
+  margin-bottom: 75px;
+}
+
+/* 2- Form Entrar */
+
+.formEntrar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid white;
+  padding-bottom: 20px;
+  padding-right: 50px;
+}
+
+.formEntrar h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.formEntrar .Email {
+  width: 440px;
+  height: 45px;
+  border: none;
+  background-color: #525252;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.formEntrar .Email::placeholder {
+  color: #ffffff;
+}
+
+.formEntrar .Senha {
+  width: 440px;
+  height: 45px;
+  border: none;
+  background-color: #525252;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.formEntrar .Senha::placeholder {
+  color: #ffffff;
+}
+
+.formEntrar a {
+  text-decoration: underline;
+  color: #00fff0;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  margin-block: 10px;
+}
+
+.formEntrar .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.btn .Entrar {
+  width: 170px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: rgba(0, 255, 240, 0.37);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.formEntrar .btn .or {
+  letter-spacing: 1.6px;
+  margin-left: 26px;
+  margin-right: 13px;
+  color: #8d8c8c;
+  font-family: "Poppins", sans-serif;
+  font-weight: medium;
+}
+
+.formEntrar .btn .img {
+  border: 1px solid white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: none;
+  margin-left: 13px;
+  transition: background-color 250ms;
+}
+
+.formEntrar .btn .img:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.formEntrar .btn .img:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 3- Form Cadastrar */
+
+.formCadastrar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-left: 50px;
+}
+
+.formCadastrar h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.formCadastrar p {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.formCadastrar .Email {
+  width: 440px;
+  height: 45px;
+  border: none;
+  background-color: #525252;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 10px;
+  margin-block: 25px;
+}
+
+.Check {
+  border: none;
+  width: 20px;
+  height: 20px;
+}
+
+.formCadastrar a {
+  text-decoration: underline;
+  color: #00fff0;
+  cursor: pointer;
+}
+
+.formCadastrar .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.btn .Cadastrar {
+  width: 170px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: rgba(0, 255, 240, 0.37);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.formCadastrar .btn .or {
+  letter-spacing: 1.6px;
+  margin-left: 26px;
+  margin-right: 13px;
+  color: #8d8c8c;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.formCadastrar .btn .img {
+  border: 1px solid white;
+  border-radius: 50%;
+  object-fit: none;
+  margin-left: 13px;
+  transition: background-color 250ms;
+}
+
+.formCadastrar .btn .img:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.formCadastrar .btn .img:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
