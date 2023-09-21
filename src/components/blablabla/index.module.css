@@ -3,10 +3,42 @@
   right: 20px;
   bottom: 20px;
   background-color: rgba(17, 17, 17, 0.7);
-  padding: 1em;
+  padding: 20px;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.content {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .botoes {
   display: flex;
+}
+
+.botoes > * {
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  margin-right: 0.8em;
+  cursor: pointer;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.botaoAceitar {
+  background-color: var(--btnPrimaryDark);
+}
+
+.botaoLer {
+  background-color: rgba(0, 178, 255, 0.37);
 }
