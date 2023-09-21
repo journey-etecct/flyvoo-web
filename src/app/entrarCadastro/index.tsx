@@ -7,6 +7,8 @@ import { poppins500 } from "@/components/navbar_home";
 import { Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { CheckBox } from "@mui/icons-material";
+import { georama } from "../inicio";
+import { useState } from "react";
 
 export const queensidesL = localFont({
   src: "../../../public/fonts/queensides_light.ttf",
@@ -15,6 +17,9 @@ export const poppins400 = Poppins({ subsets: ["latin"], weight: "400" });
 export const poppins700 = Poppins({ subsets: ["latin"], weight: "700" });
 
 export default function EntrarCadastro() {
+  /// [checado] pega o valor da checkbox
+  const [checado, setChecado] = useState(false);
+
   return (
     <motion.div
       className={styles.container}
@@ -23,7 +28,7 @@ export default function EntrarCadastro() {
       style={{ position: "absolute" }}
     >
       <div className={styles.form}>
-        <form className={styles.formEntrar}>
+        <form id="entrar" className={styles.formEntrar}>
           <h1 className={queensidesL.className}>Entrar</h1>
           <input
             className={styles.Email}
@@ -43,7 +48,9 @@ export default function EntrarCadastro() {
             Esqueceu a senha?
           </a>
           <div className={styles.btn}>
-            <button className={styles.Entrar}>ENTRAR</button>
+            <button className={styles.Entrar} style={georama.style}>
+              ENTRAR
+            </button>
             <p className={styles.or}>OU</p>
             <a href={undefined}>
               <Image
@@ -66,12 +73,13 @@ export default function EntrarCadastro() {
           </div>
         </form>
 
-        <form className={styles.formCadastrar}>
+        <form id="cadastro" className={styles.formCadastrar}>
           <h1 className={queensidesL.className}>Cadastro</h1>
           <p style={poppins400.style}>Primeiro, insira seu email:</p>
           <p style={poppins400.style}>(ele é único e precisará ser validado)</p>
           <input
             className={styles.Email}
+            style={poppins500.style}
             type="email"
             name="email"
             placeholder="Email"
@@ -85,6 +93,8 @@ export default function EntrarCadastro() {
             ></input>
             *Eu aceito os <a>Termos de Uso</a> e <a>Política de Privacidade</a>. */}
           <FormControlLabel
+            checked={checado}
+            onClick={() => setChecado(!checado)}
             control={<Checkbox required />}
             label={
               <div style={poppins700.style}>
@@ -94,7 +104,9 @@ export default function EntrarCadastro() {
             }
           />
           <div className={styles.btn}>
-            <button className={styles.Cadastrar}>PRÓXIMO</button>
+            <button className={styles.Cadastrar} style={georama.style}>
+              PRÓXIMO
+            </button>
             <p className={styles.or}>OU</p>
             <a href={undefined}>
               <Image

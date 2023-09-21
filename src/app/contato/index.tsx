@@ -80,7 +80,10 @@ export default function Contato() {
                 autoComplete="email"
               />
             </div>
-            <div className={styles.inputContainer}>
+            <div
+              className={styles.inputContainer}
+              style={{ paddingBottom: "3px" }}
+            >
               <label htmlFor="mensagem" className={styles.label}>
                 Mensagem
               </label>
