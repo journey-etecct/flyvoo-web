@@ -1,0 +1,12 @@
+.popup {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: rgba(17, 17, 17, 0.7);
+  padding: 1em;
+  border-radius: 25px;
+}
+
+.botoes {
+  display: flex;
+}

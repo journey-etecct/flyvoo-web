@@ -6,7 +6,6 @@ import localFont from "next/font/local";
 import { poppins500 } from "@/components/navbar_home";
 import { Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { CheckBox } from "@mui/icons-material";
 import { georama } from "../inicio";
 import { useState } from "react";
 

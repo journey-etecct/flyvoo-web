@@ -10,6 +10,7 @@ import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
 import { useCookies } from "next-client-cookies";
+import PopupPolitica from "@/components/blablabla";
 
 export default function Root() {
   const cookies = useCookies();
@@ -55,6 +56,7 @@ export default function Root() {
             </Routes>
           </AnimatePresence>
         </div>
+        <PopupPolitica />
       </Router>
     );
 }
