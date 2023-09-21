@@ -9,7 +9,7 @@ export default function PopupPolitica() {
       initial={{ right: "-100px" }}
       animate={{ right: "20px" }}
       transition={{ ease: "circIn", delay: 0.5 }}
-    >
+    > 
       <span>texto</span>
       <br />
       <span>texto</span>
