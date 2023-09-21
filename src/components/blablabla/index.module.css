@@ -39,6 +39,10 @@
   background-color: var(--btnPrimaryDark);
 }
 
+.botaoAceitar:hover {
+  background-color: var(--btnPrimaryDark);
+}
+
 .botaoLer {
   background-color: rgba(0, 178, 255, 0.37);
 }
