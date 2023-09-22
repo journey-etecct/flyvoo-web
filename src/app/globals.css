@@ -6,7 +6,7 @@
   --btnPrimaryHover: rgba(0, 255, 238, 0.4);
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar:not(.terosScroll::-webkit-scrollbar) {
   display: none;
 }
 

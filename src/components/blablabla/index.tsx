@@ -1,12 +1,30 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat, Raleway } from "next/font/google";
 import styles from "./index.module.css";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { token } from "./token";
+import $ from "jquery";
 
 export const montserrat = Montserrat({ subsets: ["latin"] });
+export const raleway = Raleway({ subsets: ["latin"] });
 
 export default function PopupPolitica() {
   const [aparecerPopup, setAparecerPopup] = useState(true);
+
+  async function getTermos() {
+    const url =
+      "https://api.github.com/repos/journey-etecct/flyvoo-app/contents/TERMOS.md";
+    const resposta = await fetch(url, {
+      headers: { Authorization: "token " + token },
+    });
+    const termosEncriptado = (await resposta.json())["content"];
+    const termos = atob(termosEncriptado);
+    $("#termos").html("<p>eita</p>");
+  }
+
+  useEffect(() => {
+    getTermos();
+  });
 
   return (
     <>
@@ -19,12 +37,20 @@ export default function PopupPolitica() {
     return (
       <motion.div className={styles.fundo}>
         <motion.div className={styles.dialogo}>
+          <div className={styles.termosScroll}>
+            <h2>Politica de Privacidade</h2>
+            <p id="politica">Carregando...</p>
+            <h2>Termos de Uso</h2>
+            <p id="termos">Carregando...</p>
+          </div>
           <p
             onClick={() => {
               setAparecerPopup(false);
             }}
+            className={styles.concordo}
+            style={raleway.style}
           >
-            fechar
+            Concordo
           </p>
         </motion.div>
       </motion.div>
