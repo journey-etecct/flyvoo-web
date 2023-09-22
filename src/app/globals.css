@@ -2,7 +2,7 @@
 @import "bootstrap-icons";
 
 :root {
-  --btnPrimaryDark: rgba(0, 255, 240, 0.37);
+  --btnPrimary: rgba(0, 255, 240, 0.37);
   --btnPrimaryHover: rgba(0, 255, 238, 0.4);
 }
 
@@ -11,7 +11,7 @@
 }
 
 ::selection {
-  background-color: var(--btnPrimaryDark);
+  background-color: var(--btnPrimary);
   border-radius: 25px;
 }
 
