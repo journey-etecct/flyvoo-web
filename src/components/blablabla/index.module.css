@@ -1,3 +1,4 @@
+/* popup */
 .popup {
   position: fixed;
   right: 20px;
@@ -33,16 +34,48 @@
   text-align: center;
   font-size: 17px;
   font-weight: 700;
+  transition: opacity 100ms, background-color 100ms;
 }
 
 .botaoAceitar {
-  background-color: var(--btnPrimaryDark);
+  background-color: var(--btnPrimary);
 }
 
 .botaoAceitar:hover {
-  background-color: var(--btnPrimaryDark);
+  background-color: var(--btnPrimaryHover);
+}
+
+.botaoAceitar:active {
+  opacity: 0.5;
 }
 
 .botaoLer {
   background-color: rgba(0, 178, 255, 0.37);
+}
+
+.botaoLer:hover {
+  background-color: rgba(0, 178, 255, 0.5);
+}
+
+.botaoLer:active {
+  opacity: 0.5;
+}
+
+/* dialogo */
+.fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.dialogo {
+  background-color: #111111;
+  position: fixed;
 }
