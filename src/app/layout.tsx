@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Flyvoo",
   description: "Site para decisão precisa da sua vida profissional.",
   creator: "Journey",
+  applicationName: "Flyvoo WEB",
 };
 
 export default function RootLayout({
