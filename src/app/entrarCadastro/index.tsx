@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
 import localFont from "next/font/local";
@@ -15,7 +14,13 @@ export const queensidesL = localFont({
 export const poppins400 = Poppins({ subsets: ["latin"], weight: "400" });
 export const poppins700 = Poppins({ subsets: ["latin"], weight: "700" });
 
-export default function EntrarCadastro() {
+export default function EntrarCadastro({
+  setReversoFuncao,
+  reverse,
+}: {
+  setReversoFuncao: Function;
+  reverse: boolean;
+}) {
   /// [checado] pega o valor da checkbox
   const [checado, setChecado] = useState(false);
 
@@ -25,6 +30,7 @@ export default function EntrarCadastro() {
       initial={{ opacity: 0, left: reverse ? -50 : 50 }}
       animate={{ opacity: 1, left: 0 }}
       style={{ position: "absolute" }}
+      exit={{ opacity: 0, left: reverse ? -50 : 50 }}
     >
       <div className={styles.form}>
         <form id="entrar" className={styles.formEntrar}>

@@ -3,16 +3,22 @@ import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Georama } from "next/font/google";
 import { motion } from "framer-motion";
-import { mudarCoiso, reverse } from "@/components/navbar_inicio";
 
 export const georama = Georama({ subsets: ["latin"] });
 
-export default function Inicio() {
+export default function Inicio({
+  setReversoFuncao,
+  reverse,
+}: {
+  setReversoFuncao: Function;
+  reverse: boolean;
+}) {
   return (
     <motion.div
       className="animacao"
       initial={{ opacity: 0, left: reverse ? -50 : 50 }}
       animate={{ opacity: 1, left: 0 }}
+      exit={{ opacity: 0, left: reverse ? -50 : 50 }}
     >
       <div className={styles.flyBox}>
         <div className={styles.flyItens}>
@@ -23,11 +29,7 @@ export default function Inicio() {
           <p className={styles.flyDesc}>
             Encontre sua vocação e comece sua jornada no mercado de trabalho
           </p>
-          <Link
-            className={styles.flyStart}
-            to="/entrar"
-            onClick={() => mudarCoiso("/entrar")}
-          >
+          <Link className={styles.flyStart} to="/entrar" onClick={() => {}}>
             Comece Agora
           </Link>
         </div>

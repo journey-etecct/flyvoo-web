@@ -8,14 +8,12 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useCookies } from "next-client-cookies";
 
-export let reverse: boolean;
-
-const telas: string[] = ["/", "/sobre", "/contato", "/entrar"];
-export function mudarCoiso(path: string) {
-  reverse = telas.indexOf(path) < telas.indexOf(location.pathname);
-}
-
-export default function NavbarInicio() {
+export default function NavbarInicio({
+  setReversoFuncao,
+}: {
+  setReversoFuncao: Function;
+}) {
+  const telas: string[] = ["/", "/sobre", "/contato", "/entrar"];
   const cookies = useCookies();
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref);
@@ -38,7 +36,11 @@ export default function NavbarInicio() {
         }
         onMouseOver={hoverHome}
         onMouseOut={removerListener}
-        onClick={() => mudarCoiso("/")}
+        onClick={() => {
+          setReversoFuncao(
+            telas.indexOf("/") < telas.indexOf(location.pathname)
+          );
+        }}
         onDoubleClick={() => {
           cookies.set("logado", "true");
           window.location.reload();
@@ -56,7 +58,11 @@ export default function NavbarInicio() {
       </NavLink>
       <div style={{ display: "flex", alignItems: "center" }}>
         <NavLink
-          onClick={() => mudarCoiso("/sobre")}
+          onClick={() => {
+            setReversoFuncao(
+              telas.indexOf("/sobre") < telas.indexOf(location.pathname)
+            );
+          }}
           to={"/sobre"}
           className={({ isActive, isPending }) =>
             isActive ? `${style.linkHead} ${style.selecionado}` : style.linkHead
@@ -65,7 +71,11 @@ export default function NavbarInicio() {
           Sobre o Flyvoo
         </NavLink>
         <NavLink
-          onClick={() => mudarCoiso("/contato")}
+          onClick={() => {
+            setReversoFuncao(
+              telas.indexOf("/contato") < telas.indexOf(location.pathname)
+            );
+          }}
           to={"/contato"}
           className={({ isActive, isPending }) =>
             isActive ? `${style.linkHead} ${style.selecionado}` : style.linkHead
@@ -74,7 +84,11 @@ export default function NavbarInicio() {
           Contato
         </NavLink>
         <NavLink
-          onClick={() => mudarCoiso("/entrar")}
+          onClick={() => {
+            setReversoFuncao(
+              telas.indexOf("/entrar") < telas.indexOf(location.pathname)
+            );
+          }}
           to="/entrar"
           className={({ isActive, isPending }) =>
             isActive

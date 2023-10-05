@@ -1,17 +1,23 @@
-import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { georama } from "../inicio";
 import Image from "next/image";
 
 let jaFoi: boolean = false;
 
-export default function Contato() {
+export default function Contato({
+  setReversoFuncao,
+  reverse,
+}: {
+  setReversoFuncao: Function;
+  reverse: boolean;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, left: reverse ? -50 : 50 }}
       animate={{ opacity: 1, left: 0 }}
+      exit={{ opacity: 0, left: !reverse ? -50 : 50 }}
       className="animacao"
       style={{ flexDirection: "column" }}
     >

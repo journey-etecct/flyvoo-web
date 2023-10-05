@@ -1,4 +1,3 @@
-import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./index.module.css";
@@ -12,13 +11,20 @@ const nunito = localFont({
   src: "../../../public/fonts/nunito.ttf",
 });
 
-export default function Sobre() {
+export default function Sobre({
+  setReversoFuncao,
+  reverse,
+}: {
+  setReversoFuncao: Function;
+  reverse: boolean;
+}) {
   return (
     <motion.div
       style={{ position: "absolute" }}
       className={styles.container}
       initial={{ opacity: 0, left: reverse ? -50 : 50 }}
       animate={{ opacity: 1, left: 0 }}
+      exit={{ opacity: 0, left: !reverse ? -50 : 50 }}
     >
       <div className={styles.flyItens}>
         <h1 className={styles.txt} style={georama.style}>
