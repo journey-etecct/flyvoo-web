@@ -11,6 +11,7 @@ import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
 import { useCookies } from "next-client-cookies";
 import PopupPolitica from "@/components/blablabla";
+import Mais from "./mais";
 
 export default function Root() {
   const cookies = useCookies();
@@ -35,6 +36,7 @@ export default function Root() {
             <AnimatePresence>
               <Routes>
                 <Route path="/" Component={Home} index></Route>
+                <Route path="/mais/" Component={Mais}></Route>
               </Routes>
             </AnimatePresence>
           </div>
