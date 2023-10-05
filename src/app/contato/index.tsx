@@ -8,48 +8,6 @@ import Image from "next/image";
 let jaFoi: boolean = false;
 
 export default function Contato() {
-  useEffect(() => {
-    loadGoogleMapsScript();
-  }, []);
-
-  const loadGoogleMapsScript = () => {
-    const googleMapsScript = document.createElement("script");
-    googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDi-DZdD0eMnngY6rVKOB-dhLy6GPwCfEA&libraries=places&callback=Function.prototype`;
-    googleMapsScript.async = true;
-    googleMapsScript.defer = true;
-
-    googleMapsScript.onload = initializeMap;
-
-    if (!jaFoi) {
-      document.body.appendChild(googleMapsScript);
-      jaFoi = true;
-    } else {
-      initializeMap();
-    }
-  };
-
-  const initializeMap = () => {
-    setTimeout(() => {
-      if (
-        typeof window.google === "object" &&
-        typeof window.google.maps === "object"
-      ) {
-        const mapOptions = {
-          center: { lat: -23.59340353478936, lng: -46.40796951505325 },
-          zoom: 19,
-          zoomControl: false,
-          fullscreenControl: false,
-          streetViewControl: false,
-          mapTypeControl: false,
-          keyboardShortcuts: false,
-        };
-
-        const mapElement = document.getElementById("google-map")!;
-        const map = new window.google.maps.Map(mapElement, mapOptions);
-      }
-    }, 1000);
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, left: reverse ? -50 : 50 }}
@@ -115,7 +73,12 @@ export default function Contato() {
                 r="30"
               ></circle>
             </svg>
-            <div id="google-map" className={styles.mapa}></div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2585.3905266027887!2d-46.40897694582364!3d-23.59361175030477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6f7090183c91%3A0x7fafdf938dd0eb78!2sSchool%20Cidade%20Tiradentes%20State%20Technical!5e0!3m2!1sen!2sbr!4v1696536060320!5m2!1sen!2sbr"
+              style={{ border: 0 }}
+              loading="lazy"
+              className={styles.mapa}
+            ></iframe>
           </div>
         </div>
         <div className={styles.imagemContainer}>

@@ -36,7 +36,7 @@ export default function PopupPolitica() {
         id="popup"
         initial={{ right: "-500px" }}
         animate={{ right: "20px" }}
-        transition={{ ease: [0, 0.71, 0.2, 1.01], delay: 1, duration: 0.8 }}
+        transition={{ ease: [0, 0.71, 0.2, 1.01], duration: 0.8 }}
         exit={{ bottom: "-250px" }}
       >
         <span className={`${styles.title} ${montserrat.className}`}>
