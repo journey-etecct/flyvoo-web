@@ -10,16 +10,16 @@ import { useCookies } from "next-client-cookies";
 
 export let reverse: boolean;
 
+const telas: string[] = ["/", "/sobre", "/contato", "/entrar"];
+export function mudarCoiso(path: string) {
+  reverse = telas.indexOf(path) < telas.indexOf(location.pathname);
+}
+
 export default function NavbarInicio() {
   const cookies = useCookies();
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref);
   const [luzOpacidade, setLuzOpacidade] = useState(0);
-  const telas: string[] = ["/", "/sobre", "/contato", "/entrar"];
-
-  function mudarCoiso(path: string) {
-    reverse = telas.indexOf(path) < telas.indexOf(location.pathname);
-  }
 
   function hoverHome() {
     setLuzOpacidade(1);
@@ -106,7 +106,7 @@ export function useFollowPointer(ref: RefObject<HTMLElement>) {
     window.addEventListener("pointermove", handlePointerMove);
 
     return () => window.removeEventListener("pointermove", handlePointerMove);
-  }, []);
+  });
 
   return point;
 }

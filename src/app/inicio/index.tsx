@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Georama } from "next/font/google";
 import { motion } from "framer-motion";
-import { reverse } from "@/components/navbar_inicio";
+import { mudarCoiso, reverse } from "@/components/navbar_inicio";
 
 export const georama = Georama({ subsets: ["latin"] });
 
@@ -23,7 +23,11 @@ export default function Inicio() {
           <p className={styles.flyDesc}>
             Encontre sua vocação e comece sua jornada no mercado de trabalho
           </p>
-          <Link className={styles.flyStart} to="/entrar">
+          <Link
+            className={styles.flyStart}
+            to="/entrar"
+            onClick={() => mudarCoiso("/entrar")}
+          >
             Comece Agora
           </Link>
         </div>

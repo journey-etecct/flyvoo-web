@@ -1,0 +1,131 @@
+/* popup */
+.popup {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: rgba(17, 17, 17, 0.7);
+  padding: 20px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.content {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.botoes {
+  display: flex;
+}
+
+.botoes > * {
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  margin-right: 0.8em;
+  cursor: pointer;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  transition: opacity 100ms, background-color 100ms;
+}
+
+.botaoAceitar {
+  background-color: var(--btnPrimary);
+}
+
+.botaoAceitar:hover {
+  background-color: var(--btnPrimaryHover);
+}
+
+.botaoAceitar:active {
+  opacity: 0.5;
+}
+
+.botaoLer {
+  background-color: rgba(0, 178, 255, 0.37);
+}
+
+.botaoLer:hover {
+  background-color: rgba(0, 178, 255, 0.5);
+}
+
+.botaoLer:active {
+  opacity: 0.5;
+}
+
+/* dialogo */
+.fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.dialogo {
+  background-color: #111111;
+  position: fixed;
+  padding: 40px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.termosScroll {
+  width: 60vw;
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.termosScroll h2:first-child {
+  margin-top: 0;
+}
+
+.termosScroll::-webkit-scrollbar {
+  background-color: #222;
+  border-radius: 9999px;
+  width: 11px;
+}
+
+.termosScroll::-webkit-scrollbar-thumb {
+  background-color: var(--btnPrimary);
+  border-radius: 9999px;
+}
+
+.termosScroll h2 {
+  color: rgba(0, 255, 240, 0.6);
+}
+
+.concordo {
+  background-color: var(--btnPrimary);
+  width: fit-content;
+  padding: 0.7em 2em;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 0;
+  transition: opacity 100ms, background-color 100ms;
+}
+
+.concordo:hover {
+  background-color: var(--btnPrimaryHover);
+}
+
+.concordo:active {
+  opacity: 0.5;
+}

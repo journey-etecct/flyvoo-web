@@ -30,6 +30,7 @@
 .mapa {
   width: 30em;
   height: 100%;
+  z-index: 999;
 }
 
 .mapaContainer {
@@ -123,6 +124,7 @@
   -webkit-animation: rotator 1.4s linear infinite;
   animation: rotator 1.4s linear infinite;
   position: absolute;
+  z-index: 2;
 }
 
 @-webkit-keyframes rotator {
