@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Privacidade() {
-  return <>privacidade</>;
+  return <motion.div>privacidade</motion.div>;
 }

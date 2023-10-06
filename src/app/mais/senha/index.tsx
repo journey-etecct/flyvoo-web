@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Senha() {
-  return <>senha</>;
+  return <motion.div>senha</motion.div>;
 }

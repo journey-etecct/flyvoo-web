@@ -15,6 +15,10 @@ import Erro404 from "./404";
 import Cursos from "./cursos";
 import Empresas from "./empresas";
 import Mais from "./mais";
+import Conta from "./mais/conta";
+import Senha from "./mais/senha";
+import Privacidade from "./mais/privacidade";
+import CentralAjuda from "./mais/centralAjuda";
 
 export default function Root() {
   const cookies = useCookies();
@@ -38,11 +42,16 @@ export default function Root() {
           >
             <Routes>
               <Route path="/" Component={Home} index></Route>
-              <Route path="/cursos" Component={Cursos} index></Route>
-              <Route path="/carreiras" Component={Empresas} index></Route>
-              <Route path="/mais" Component={Mais} index></Route>
+              <Route path="/cursos" Component={Cursos}></Route>
+              <Route path="/carreiras" Component={Empresas}></Route>
+              <Route path="/mais" Component={Mais}>
+                <Route path="" Component={Conta} index />
+                <Route path="senha" Component={Senha} />
+                <Route path="privacidade" Component={Privacidade} />
+                <Route path="central" Component={CentralAjuda} />
+              </Route>
 
-              <Route path="*" Component={Erro404} index></Route>
+              <Route path="*" Component={Erro404}></Route>
             </Routes>
           </div>
         </div>
