@@ -11,6 +11,10 @@ import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
 import { useCookies } from "next-client-cookies";
 import PopupPolitica from "@/components/blablabla";
+import Erro404 from "./404";
+import Cursos from "./cursos";
+import Empresas from "./empresas";
+import Mais from "./mais";
 
 export default function Root() {
   const cookies = useCookies();
@@ -34,6 +38,11 @@ export default function Root() {
           >
             <Routes>
               <Route path="/" Component={Home} index></Route>
+              <Route path="/cursos" Component={Cursos} index></Route>
+              <Route path="/carreiras" Component={Empresas} index></Route>
+              <Route path="/mais" Component={Mais} index></Route>
+
+              <Route path="*" Component={Erro404} index></Route>
             </Routes>
           </div>
         </div>
@@ -50,6 +59,8 @@ export default function Root() {
             <Route path="/sobre" Component={Sobre}></Route>
             <Route path="/contato" Component={Contato}></Route>
             <Route path="/entrar" Component={EntrarCadastro}></Route>
+
+            <Route path="*" Component={Erro404} index></Route>
           </Routes>
         </div>
         <PopupPolitica />

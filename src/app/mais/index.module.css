@@ -1,0 +1,11 @@
+.main {
+  background-color: aqua;
+  width: 70%;
+  height: 100%;
+}
+
+.sidenav {
+  background-color: red;
+  width: 30%;
+  height: 100%;
+}

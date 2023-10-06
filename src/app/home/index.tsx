@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   useEffect(() => {
@@ -6,7 +7,7 @@ export default function Home() {
   });
 
   return (
-    <div
+    <motion.div
       style={{
         display: "flex",
         justifyContent: "center",
@@ -16,6 +17,6 @@ export default function Home() {
       }}
     >
       NOSSA
-    </div>
+    </motion.div>
   );
 }
