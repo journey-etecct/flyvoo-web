@@ -1,7 +1,7 @@
 import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { georama } from "../inicio";
 import Image from "next/image";
 
