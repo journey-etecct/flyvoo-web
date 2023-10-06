@@ -32,11 +32,9 @@ export default function Root() {
             }}
             id="conteudo"
           >
-            <AnimatePresence>
-              <Routes>
-                <Route path="/" Component={Home} index></Route>
-              </Routes>
-            </AnimatePresence>
+            <Routes>
+              <Route path="/" Component={Home} index></Route>
+            </Routes>
           </div>
         </div>
       </Router>
@@ -47,14 +45,12 @@ export default function Root() {
         {/* USUÁRIO NÃO LOGADO */}
         <NavbarInicio />
         <div className="testa">
-          <AnimatePresence>
-            <Routes>
-              <Route path="/" Component={Inicio} index></Route>
-              <Route path="/sobre" Component={Sobre}></Route>
-              <Route path="/contato" Component={Contato}></Route>
-              <Route path="/entrar" Component={EntrarCadastro}></Route>
-            </Routes>
-          </AnimatePresence>
+          <Routes>
+            <Route path="/" Component={Inicio} index></Route>
+            <Route path="/sobre" Component={Sobre}></Route>
+            <Route path="/contato" Component={Contato}></Route>
+            <Route path="/entrar" Component={EntrarCadastro}></Route>
+          </Routes>
         </div>
         <PopupPolitica />
       </Router>
