@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function CentralAjuda() {
-  return <>central</>;
+  return <motion.div>central</motion.div>;
 }
