@@ -1,0 +1,63 @@
+.sidenav {
+  background-color: red;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.card {
+  width: 95%;
+  height: 100%;
+  background-color: blue;
+  position: absolute;
+  top: 12%;
+  border-radius: 20px;
+}
+
+/* informacao do usuario */
+.info {
+  background-color: chartreuse;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border-radius: 50px;
+  margin-right: 1em;
+}
+
+.nome {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.email {
+  color: black;
+  margin: 0;
+}
+
+/* opcoes do menu */
+.opcoes {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: brown;
+}
+
+.opcao {
+  background-color: coral;
+}
+
+.opcao.selecionado {
+  background-color: blueviolet;
+}
+
+/* switch do modo escuro (não o da nintendo) */
