@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import styles from "./index.module.css";
 import { reverse } from "@/components/navbar_home";
 import { Outlet } from "react-router-dom";
+import NavBarMais from "@/components/navbar_mais";
 
 export default function Mais() {
   return (
@@ -18,7 +19,7 @@ export default function Mais() {
       <div className={styles.main}>
         <Outlet />
       </div>
-      <div className={styles.sidenav}></div>
+      <NavBarMais />
     </motion.div>
   );
 }
