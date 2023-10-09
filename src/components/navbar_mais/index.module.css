@@ -1,24 +1,23 @@
 .sidenav {
-  background-color: red;
-  width: 30%;
+  width: 27.5%;
   height: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
+  align-items: flex-end;
 }
 
 .card {
-  width: 95%;
-  height: 100%;
-  background-color: blue;
-  position: absolute;
-  top: 12%;
-  border-radius: 20px;
+  width: 90%;
+  height: 80%;
+  background-color: #111111;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* informacao do usuario */
 .info {
-  background-color: chartreuse;
   padding: 1em;
   display: flex;
   align-items: center;
@@ -33,31 +32,63 @@
 }
 
 .nome {
-  color: black;
   font-weight: bold;
   font-size: 1.2em;
   margin: 0;
 }
 
 .email {
-  color: black;
   margin: 0;
 }
 
 /* opcoes do menu */
 .opcoes {
-  padding: 1em;
+  padding: 1em 1.5em;
   display: flex;
   flex-direction: column;
-  background-color: brown;
 }
 
 .opcao {
-  background-color: coral;
+  padding: 0.6em 1em;
+  border-radius: 9999px;
+  transition: background-color 250ms;
+}
+
+.opcao:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.opcao:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .opcao.selecionado {
-  background-color: blueviolet;
+  background-color: white;
+  color: black;
+}
+
+.sair {
+  margin: 1em 1.5em;
+  padding: 0.6em 1em;
+  border-radius: 9999px;
+  color: #e81717;
+  cursor: pointer;
+  transition: background-color 250ms;
+  width: fit-content;
+}
+
+.sair:hover {
+  background-color: rgba(255, 0, 0, 0.1);
 }
 
 /* switch do modo escuro (não o da nintendo) */
+.modoSwitch {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2em;
+  padding-bottom: 1em;
+}
+
+.label {
+  font-weight: bold;
+}

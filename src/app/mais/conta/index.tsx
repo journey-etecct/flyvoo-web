@@ -6,7 +6,7 @@ export default function Conta() {
     <motion.div
       style={{
         display: "flex",
-        width: "100%",
+        width: "72.5%",
         height: "100%",
         position: "absolute",
       }}
