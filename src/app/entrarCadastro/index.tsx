@@ -8,9 +8,13 @@ import { Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { georama } from "../inicio";
 import { useState } from "react";
+import handleGoogleLogin from "@/services/oauth/google";
+import handleMicrosoftLogin from '@/services/oauth/ms';
+
 
 export const queensidesL = localFont({
   src: "../../../public/fonts/queensides_light.ttf",
+  
 });
 export const poppins400 = Poppins({ subsets: ["latin"], weight: "400" });
 export const poppins700 = Poppins({ subsets: ["latin"], weight: "700" });
@@ -51,7 +55,7 @@ export default function EntrarCadastro() {
               ENTRAR
             </button>
             <p className={styles.or}>OU</p>
-            <a href={undefined}>
+            <a href={undefined} onClick={handleMicrosoftLogin}>
               <Image
                 className={styles.img}
                 width={60}
@@ -60,7 +64,7 @@ export default function EntrarCadastro() {
                 alt="Microsoft"
               />
             </a>
-            <a href={undefined}>
+            <a href={undefined} onClick={handleGoogleLogin}>
               <Image
                 className={styles.img}
                 width={60}
@@ -80,7 +84,7 @@ export default function EntrarCadastro() {
             className={styles.Email}
             style={poppins500.style}
             type="email"
-            name="email"
+            name="emailCadastro"
             placeholder="Email"
           ></input>
           {/* <input
@@ -107,7 +111,7 @@ export default function EntrarCadastro() {
               PRÓXIMO
             </button>
             <p className={styles.or}>OU</p>
-            <a href={undefined}>
+            <a href={undefined} onClick={handleMicrosoftLogin}>
               <Image
                 className={styles.img}
                 width={60}
@@ -116,7 +120,7 @@ export default function EntrarCadastro() {
                 alt="Microsoft"
               />
             </a>
-            <a href={undefined}>
+            <a href={undefined} onClick={handleGoogleLogin}>
               <Image
                 className={styles.img}
                 width={60}
