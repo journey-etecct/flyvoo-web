@@ -3,7 +3,7 @@
   margin: 1em;
   padding: 1em;
   border-radius: 25px;
-  z-index: 7;
+  z-index: 2;
   position: fixed;
 }
 
@@ -60,7 +60,6 @@
   padding: 1em 0;
   background-color: #161616;
   width: 6em;
-  z-index: 4;
   border-radius: 25px;
   overflow: hidden;
   transition: width ease 500ms;

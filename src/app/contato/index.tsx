@@ -2,7 +2,7 @@ import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
 import React from "react";
-import { georama } from "../inicio";
+import { georama800 } from "../inicio";
 import Image from "next/image";
 
 let jaFoi: boolean = false;
@@ -15,7 +15,7 @@ export default function Contato() {
       className="animacao"
       style={{ flexDirection: "column" }}
     >
-      <h1 className={styles.titulo} style={georama.style}>
+      <h1 className={styles.titulo} style={georama800.style}>
         Contate-nos
       </h1>
       <div className={styles.pageContainer}>

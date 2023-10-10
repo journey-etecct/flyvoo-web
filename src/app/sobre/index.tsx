@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./index.module.css";
 import localFont from "next/font/local";
-import { georama } from "../inicio";
+import { georama800 } from "../inicio";
 
 const sometype = localFont({
   src: "../../../public/fonts/sometype.ttf",
@@ -21,7 +21,7 @@ export default function Sobre() {
       animate={{ opacity: 1, left: 0 }}
     >
       <div className={styles.flyItens}>
-        <h1 className={styles.txt} style={georama.style}>
+        <h1 className={styles.txt} style={georama800.style}>
           Sobre o Flyvoo
         </h1>
         <p className={styles.flyDesc} style={nunito.style}>
