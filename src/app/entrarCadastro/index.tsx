@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
@@ -7,7 +8,7 @@ import { poppins500 } from "@/components/navbar_home";
 import { Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { georama } from "../inicio";
-import { useState } from "react";
+import { FaEye, FaEyeSlash }  from "react-icons/fa6";
 import handleGoogleLogin from "@/services/oauth/google";
 import handleMicrosoftLogin from '@/services/oauth/ms';
 
@@ -22,6 +23,13 @@ export const poppins700 = Poppins({ subsets: ["latin"], weight: "700" });
 export default function EntrarCadastro() {
   /// [checado] pega o valor da checkbox
   const [checado, setChecado] = useState(false);
+  /// Responsável pela troca dos icones
+  const [showPassword, setShowPassword] = useState(false);
+
+  const exibirSenha = () => {
+    setShowPassword(!showPassword);
+  };
+
 
   return (
     <motion.div
@@ -40,13 +48,27 @@ export default function EntrarCadastro() {
             name="email"
             placeholder="Email"
           ></input>
-          <input
-            className={styles.Senha}
-            style={poppins500.style}
-            type="password"
-            name="senha"
-            placeholder="Senha"
-          ></input>
+          <div className={styles.containerSenha}>
+            <input
+              className={styles.Senha}
+              style={poppins500.style}
+              type={showPassword ? "text" : "password"}
+              name="senha"
+              id="Senha"
+              placeholder="Senha"
+            ></input>
+              {showPassword ? (
+                <FaEyeSlash
+                  onClick={exibirSenha}
+                  className={styles.hidePassword}
+                />
+              ) : (
+                <FaEye
+                  onClick={exibirSenha}
+                  className={styles.showPassword}
+                />
+              )}
+          </div>
           <a href={undefined} style={poppins500.style}>
             Esqueceu a senha?
           </a>
