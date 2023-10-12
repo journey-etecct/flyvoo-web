@@ -113,6 +113,7 @@
   padding: 1em;
   position: relative;
   top: 10px;
+  left: -5px;
   z-index: 103;
   display: flex;
   align-items: center;
@@ -168,7 +169,7 @@
   transform: rotate(45deg);
   width: 20px;
   height: 20px;
-  left: 25px;
+  left: 20px;
   z-index: 101;
 }
 

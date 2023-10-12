@@ -28,8 +28,22 @@ const telas: Telas = [
   ["privacidade", "Privacidade"],
   ["central", "Central de Ajuda"],
 ];
+const caminhosTelas: string[] = [
+  "/mais/",
+  "/mais/senha",
+  "/mais/privacidade",
+  "/mais/central",
+];
+
+export function mudarReverse(novaPagina: string) {
+  reverse =
+    caminhosTelas.indexOf("/mais/" + novaPagina) <
+    caminhosTelas.indexOf(location.pathname);
+  console.log(reverse);
+}
 
 export const georama700 = Georama({ subsets: ["latin"], weight: "700" });
+export const georama500 = Georama({ subsets: ["latin"], weight: "500" });
 
 const IOSSwitch = styled((props: SwitchProps) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -184,7 +198,7 @@ export default function NavBarMais() {
                       <div className={styles.botoes}>
                         <div
                           className={styles.Cancelar}
-                          style={georama700.style}
+                          style={georama500.style}
                           onClick={() => {
                             setPopupSair(false);
                           }}
@@ -249,6 +263,9 @@ const Opcao = (opcao: string[]) => {
             : `${styles.opcao}`
           : `${styles.opcao} ${styles.selecionado}`
       }
+      onClick={() => {
+        mudarReverse(opcao[0]);
+      }}
     >
       {opcao[1]}
     </NavLink>
