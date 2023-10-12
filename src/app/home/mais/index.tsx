@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import styles from "./index.module.css";
 import { reverse } from "@/components/navbar_home";
+import { Outlet } from "react-router-dom";
+import NavBarMais from "@/components/navbar_mais";
 
-export default function Home() {
-  useEffect(() => {
-    document.title = "Início";
-  });
-
+export default function Mais() {
   return (
     <motion.div
       style={{
@@ -18,7 +16,10 @@ export default function Home() {
       initial={{ opacity: 0, top: reverse ? -50 : 50 }}
       animate={{ opacity: 1, top: 0 }}
     >
-      NOSSA
+      <div className={styles.main}>
+        <Outlet />
+      </div>
+      <NavBarMais />
     </motion.div>
   );
 }

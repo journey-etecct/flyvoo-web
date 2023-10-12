@@ -5,7 +5,7 @@ import { Georama } from "next/font/google";
 import { motion } from "framer-motion";
 import { mudarCoiso, reverse } from "@/components/navbar_inicio";
 
-export const georama = Georama({ subsets: ["latin"] });
+export const georama800 = Georama({ subsets: ["latin"], weight: "800" });
 
 export default function Inicio() {
   return (
@@ -16,7 +16,7 @@ export default function Inicio() {
     >
       <div className={styles.flyBox}>
         <div className={styles.flyItens}>
-          <h1 className={styles.txt} style={georama.style}>
+          <h1 className={styles.txt} style={georama800.style}>
             Sua jornada começa <br />
             aqui!
           </h1>

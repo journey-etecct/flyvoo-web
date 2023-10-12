@@ -1,0 +1,186 @@
+.sidenav {
+  width: 27.5%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.card {
+  width: 90%;
+  height: 80%;
+  background-color: #111111;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* informacao do usuario */
+.info {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border-radius: 50px;
+  margin-right: 1em;
+}
+
+.nome {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.email {
+  margin: 0;
+}
+
+/* opcoes do menu */
+.opcoes {
+  padding: 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.opcao {
+  padding: 0.6em 1em;
+  border-radius: 9999px;
+  transition: background-color 250ms, scale 100ms;
+}
+
+.opcao:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.opcao:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.opcao:active {
+  scale: 0.98;
+}
+
+.opcao.selecionado {
+  background-color: white;
+  color: black;
+}
+
+.sair {
+  margin: 1em 1.5em;
+  padding: 0.6em 1em;
+  border-radius: 9999px;
+  color: #e81717;
+  cursor: pointer;
+  transition: background-color 250ms, scale 100ms;
+  width: fit-content;
+  z-index: 101;
+  position: fixed;
+}
+
+.sair:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.sair:active {
+  scale: 0.9;
+}
+
+.ppSairBackground {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ppSair {
+  z-index: 102;
+  overflow: visible;
+}
+
+.ppSairCaixa {
+  background-color: #d9d9d9;
+  border-radius: 25px;
+  padding: 1em;
+  position: relative;
+  top: 10px;
+  left: -5px;
+  z-index: 103;
+  display: flex;
+  align-items: center;
+}
+
+.ppSairCaixa div h3 {
+  margin: 0;
+  margin-bottom: 1em;
+  color: #000;
+}
+
+.botoes {
+  display: flex;
+}
+
+.botoes * {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 9999px;
+  transition: background-color 250ms, opacity 100ms;
+}
+
+.botoes *:active {
+  opacity: 0.5;
+}
+
+.botoes .Cancelar {
+  background-color: #116f6a;
+  margin-right: 0.5em;
+}
+
+.botoes .Cancelar:hover {
+  background-color: #14837d;
+}
+
+.botoes .Sair {
+  color: #6c0101;
+}
+
+.botoes .Sair:hover {
+  background-color: rgba(108, 1, 1, 0.1);
+}
+
+.iconePpSair {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+  margin-right: 0.5em;
+}
+
+.ppSairSeta {
+  background-color: #d9d9d9;
+  overflow: visible;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  left: 20px;
+  z-index: 101;
+}
+
+/* switch do modo escuro (não o da nintendo) */
+.modoSwitch {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2em;
+  padding-bottom: 1em;
+}
+
+.label {
+  font-weight: bold;
+}

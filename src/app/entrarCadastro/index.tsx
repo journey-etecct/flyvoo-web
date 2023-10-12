@@ -4,20 +4,19 @@ import { motion } from "framer-motion";
 import styles from "./index.module.css";
 import localFont from "next/font/local";
 import { poppins500 } from "@/components/navbar_home";
-import { Poppins } from "next/font/google";
+import { Georama, Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { georama } from "../inicio";
 import { useState } from "react";
 import handleGoogleLogin from "@/services/oauth/google";
-import handleMicrosoftLogin from '@/services/oauth/ms';
-
+import handleMicrosoftLogin from "@/services/oauth/ms";
+import { georama800 } from "../inicio";
 
 export const queensidesL = localFont({
   src: "../../../public/fonts/queensides_light.ttf",
-  
 });
 export const poppins400 = Poppins({ subsets: ["latin"], weight: "400" });
 export const poppins700 = Poppins({ subsets: ["latin"], weight: "700" });
+export const georama700 = Georama({ subsets: ["latin"], weight: "700" });
 
 export default function EntrarCadastro() {
   /// [checado] pega o valor da checkbox
@@ -51,7 +50,7 @@ export default function EntrarCadastro() {
             Esqueceu a senha?
           </a>
           <div className={styles.btn}>
-            <button className={styles.Entrar} style={georama.style}>
+            <button className={styles.Entrar} style={georama700.style}>
               ENTRAR
             </button>
             <p className={styles.or}>OU</p>
@@ -107,7 +106,7 @@ export default function EntrarCadastro() {
             }
           />
           <div className={styles.btn}>
-            <button className={styles.Cadastrar} style={georama.style}>
+            <button className={styles.Cadastrar} style={georama700.style}>
               PRÓXIMO
             </button>
             <p className={styles.or}>OU</p>
