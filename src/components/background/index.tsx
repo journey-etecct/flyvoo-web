@@ -1,7 +1,10 @@
-import { cookies } from "next/headers";
+"use client";
+import { useCookies } from "next-client-cookies";
 
 export default function Background() {
-  return cookies().get("dark")?.value ?? true ? (
+  const cookies = useCookies();
+
+  return cookies.get("dark") == "true" ?? true ? (
     <video
       playsInline
       autoPlay

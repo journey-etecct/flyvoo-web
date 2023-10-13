@@ -3,7 +3,7 @@
   margin: 1em;
   padding: 1em;
   border-radius: 25px;
-  z-index: 2;
+  z-index: 99;
   position: fixed;
 }
 
@@ -55,13 +55,14 @@
 
 .containerNomes {
   position: absolute;
+  z-index: 98;
   top: 0;
   margin: 1em 0 0 1em;
   padding: 1em 0;
   background-color: #161616;
   width: 6em;
   border-radius: 25px;
-  overflow: hidden;
+  overflow: visible;
   transition: width ease 500ms;
 }
 

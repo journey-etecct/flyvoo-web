@@ -38,33 +38,30 @@ export default function Root() {
     return (
       <Router>
         {/* USUÁRIO LOGADO */}
-        <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
-          <NavbarHome />
-          <div
-            style={{
-              marginLeft: "9em",
-              position: "absolute",
-              width: "calc(100% - 9em)",
-              height: "100%",
-              zIndex: "2",
-            }}
-            id="conteudo"
-          >
-            <Routes>
-              <Route path="/" Component={Home} index></Route>
-              <Route path="/cursos" Component={Cursos}></Route>
-              <Route path="/carreiras" Component={Empresas}></Route>
-              <Route path="/mais" Component={Mais}>
-                <Route Component={Conta} index />
-                <Route path="senha" Component={Senha} />
-                <Route path="privacidade" Component={Privacidade} />
-                <Route path="central" Component={CentralAjuda} />
-              </Route>
+        <div
+          style={{
+            marginLeft: "9em",
+            position: "absolute",
+            width: "calc(100vw - 9em)",
+            height: "100vh",
+          }}
+          id="conteudo"
+        >
+          <Routes>
+            <Route path="/" Component={Home} index></Route>
+            <Route path="/cursos" Component={Cursos}></Route>
+            <Route path="/carreiras" Component={Empresas}></Route>
+            <Route path="/mais" Component={Mais}>
+              <Route Component={Conta} index />
+              <Route path="senha" Component={Senha} />
+              <Route path="privacidade" Component={Privacidade} />
+              <Route path="central" Component={CentralAjuda} />
+            </Route>
 
-              <Route path="*" Component={Erro404}></Route>
-            </Routes>
-          </div>
+            <Route path="*" Component={Erro404}></Route>
+          </Routes>
         </div>
+        <NavbarHome />
       </Router>
     );
   else

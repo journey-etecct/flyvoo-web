@@ -1,0 +1,11 @@
+.container {
+  z-index: 1;
+}
+
+.container * {
+  z-index: 1;
+}
+
+.titulo {
+  letter-spacing: 2.56px;
+}

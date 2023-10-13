@@ -12,7 +12,7 @@ export function mudarCoiso(path: string) {
 
 export default function NavbarHome() {
   return (
-    <div style={{ position: "relative", overflow: "visible" }} id="navbar">
+    <div style={{ position: "fixed", overflow: "visible" }} id="navbar">
       <div className={styles.containerIcones}>
         <NavLink
           className={({ isActive, isPending }) =>

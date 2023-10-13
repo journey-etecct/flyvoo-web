@@ -79,7 +79,7 @@
   cursor: pointer;
   transition: background-color 250ms, scale 100ms;
   width: fit-content;
-  z-index: 101;
+  z-index: 102;
   position: fixed;
 }
 
@@ -96,7 +96,7 @@
   width: 100vw;
   height: 100vh;
   backdrop-filter: blur(2px);
-  z-index: 100;
+  z-index: 101;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);

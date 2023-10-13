@@ -39,6 +39,7 @@ body {
 * {
   color: white;
   text-decoration: none;
+  z-index: 0;
 }
 
 .testa {
@@ -70,6 +71,7 @@ div.animacao {
 }
 
 #conteudo {
+  z-index: 0;
   transition: filter 250ms;
 }
 
