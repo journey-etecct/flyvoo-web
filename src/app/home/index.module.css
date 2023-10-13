@@ -45,6 +45,7 @@
     padding-inline: 50px;
     width: 100%;
     display: flex;
+    text-align: center;
     justify-content: space-between;
 }
 
@@ -98,6 +99,7 @@
 .tituloCard {
     margin-bottom: 0;
     font-weight: 600;
+    white-space: pre-line;
 }
 
 .btnCard {
