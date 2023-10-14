@@ -1,6 +1,8 @@
 .sidenav {
   width: 27.5%;
   height: 100%;
+  position: fixed;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;

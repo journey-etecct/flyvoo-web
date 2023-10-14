@@ -20,6 +20,7 @@ import Privacidade from "./home/mais/privacidade";
 import CentralAjuda from "./home/mais/centralAjuda";
 import { useEffect } from "react";
 import { mudarTema } from "@/services/tema";
+import $ from "jquery";
 
 export default function Root() {
   const cookies = useCookies();
@@ -32,6 +33,14 @@ export default function Root() {
     });
 
     mudarTema(cookies.get("dark") == "true");
+
+    $("#navbar")
+      .on("mouseenter", () => {
+        $("#conteudo").css("filter", "blur(2px)");
+      })
+      .on("mouseleave", () => {
+        $("#conteudo").css("filter", "blur(0)");
+      });
   });
 
   if (logado)
