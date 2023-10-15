@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import utf8Decode from "@/services/utf8/decoder";
 import { useCookies } from "next-client-cookies";
 
-const token: string = process.env.TOKEN_TERMOS ?? "";
+export const token: string = process.env.TOKEN_TERMOS ?? "";
 
 export const montserrat = Montserrat({ subsets: ["latin"] });
 export const raleway = Raleway({ subsets: ["latin"] });

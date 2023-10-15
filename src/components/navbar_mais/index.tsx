@@ -18,6 +18,7 @@ import $ from "jquery";
 import { useFloating } from "@floating-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Georama } from "next/font/google";
+import { georama700 } from "@/app/entrarCadastro";
 
 type Telas = string[][];
 
@@ -42,7 +43,6 @@ export function mudarReverse(novaPagina: string) {
   console.log(reverse);
 }
 
-export const georama700 = Georama({ subsets: ["latin"], weight: "700" });
 export const georama500 = Georama({ subsets: ["latin"], weight: "500" });
 
 const IOSSwitch = styled((props: SwitchProps) => (
@@ -166,65 +166,51 @@ export default function NavBarMais({
           </div>
           <AnimatePresence mode="sync">
             {popupSair && (
-              <>
-                <motion.div
-                  className={styles.ppSairBackground}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.25 }}
-                  onClick={() => {
-                    setPopupSair(false);
-                  }}
-                ></motion.div>
-                <motion.div
-                  ref={refs.setFloating}
-                  style={floatingStyles}
-                  className={styles.ppSair}
-                  initial={{ opacity: 0, top: -5 }}
-                  animate={{ opacity: 1, top: 10 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <div className={styles.ppSairSeta}></div>
-                  <div className={styles.ppSairCaixa}>
-                    <span
-                      className={
-                        "material-symbols-rounded " + styles.iconePpSair
-                      }
-                      style={{ color: "#6C0101", fontSize: 40 }}
-                    >
-                      person_alert
-                    </span>
-                    <div>
-                      <h3 style={georama700.style}>
-                        Tem certeza que deseja sair?
-                      </h3>
-                      <div className={styles.botoes}>
-                        <div
-                          className={styles.Cancelar}
-                          style={georama500.style}
-                          onClick={() => {
-                            setPopupSair(false);
-                          }}
-                        >
-                          Cancelar
-                        </div>
-                        <div
-                          className={styles.Sair}
-                          style={georama700.style}
-                          onClick={() => {
-                            // TODO: sair da conta
-                            cookies.remove("logado");
-                            location.replace("/");
-                          }}
-                        >
-                          Sair
-                        </div>
+              <motion.div
+                ref={refs.setFloating}
+                style={floatingStyles}
+                className={styles.ppSair}
+                initial={{ opacity: 0, top: -5 }}
+                animate={{ opacity: 1, top: 10 }}
+                exit={{ opacity: 0 }}
+              >
+                <div className={styles.ppSairSeta}></div>
+                <div className={styles.ppSairCaixa}>
+                  <span
+                    className={"material-symbols-rounded " + styles.iconePpSair}
+                    style={{ color: "#6C0101", fontSize: 40 }}
+                  >
+                    person_alert
+                  </span>
+                  <div>
+                    <h3 style={georama700.style}>
+                      Tem certeza que deseja sair?
+                    </h3>
+                    <div className={styles.botoes}>
+                      <div
+                        className={styles.Cancelar}
+                        style={georama500.style}
+                        onClick={() => {
+                          setPopupSair(false);
+                        }}
+                      >
+                        Cancelar
+                      </div>
+                      <div
+                        className={styles.Sair}
+                        style={georama700.style}
+                        onClick={() => {
+                          // TODO: sair da conta
+                          cookies.remove("logado");
+                          location.replace("/");
+                        }}
+                      >
+                        Sair
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              </>
+                </div>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>
