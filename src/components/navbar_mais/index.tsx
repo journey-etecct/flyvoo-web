@@ -105,7 +105,11 @@ const temaBold = createTheme({
   },
 });
 
-export default function NavBarMais() {
+export default function NavBarMais({
+  onModoMudado,
+}: {
+  onModoMudado: Function;
+}) {
   const cookies = useCookies();
   const [modoEscuro, setModoEscuro] = useState(darkMode);
   const [popupSair, setPopupSair] = useState(false);
@@ -232,9 +236,10 @@ export default function NavBarMais() {
                 <IOSSwitch
                   checked={modoEscuro}
                   onClick={() => {
-                    cookies.set("dark", `${!darkMode}`);
-                    setModoEscuro(!darkMode);
-                    mudarTema(!darkMode);
+                    cookies.set("dark", `${!darkMode}`); // bota nos cookies
+                    setModoEscuro(!darkMode); // bota o efeito do switch apenas
+                    mudarTema(!darkMode); // bota numa variavel global que não causa efeito visualmente
+                    onModoMudado(); // bota efeito no fundo
                   }}
                   id="switch"
                 />

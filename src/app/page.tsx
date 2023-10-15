@@ -18,13 +18,15 @@ import Conta from "./home/mais/conta";
 import Senha from "./home/mais/senha";
 import Privacidade from "./home/mais/privacidade";
 import CentralAjuda from "./home/mais/centralAjuda";
-import { useEffect } from "react";
-import { mudarTema } from "@/services/tema";
+import { useEffect, useState } from "react";
+import { darkMode, mudarTema } from "@/services/tema";
 import $ from "jquery";
+import Background from "@/components/background";
 
 export default function Root() {
   const cookies = useCookies();
   var logado: boolean = cookies.get("logado") == "true";
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -45,50 +47,65 @@ export default function Root() {
 
   if (logado)
     return (
-      <Router>
-        {/* USUÁRIO LOGADO */}
-        <div
-          style={{
-            marginLeft: "9em",
-            position: "absolute",
-            width: "calc(100vw - 9em)",
-            height: "100vh",
-          }}
-          id="conteudo"
-        >
-          <Routes>
-            <Route path="/" Component={Home} index></Route>
-            <Route path="/cursos" Component={Cursos}></Route>
-            <Route path="/carreiras" Component={Empresas}></Route>
-            <Route path="/mais" Component={Mais}>
-              <Route Component={Conta} index />
-              <Route path="senha" Component={Senha} />
-              <Route path="privacidade" Component={Privacidade} />
-              <Route path="central" Component={CentralAjuda} />
-            </Route>
+      <>
+        <Background dark={dark} />
+        <Router>
+          {/* USUÁRIO LOGADO */}
+          <div
+            style={{
+              marginLeft: "9em",
+              position: "absolute",
+              width: "calc(100vw - 9em)",
+              height: "100vh",
+            }}
+            id="conteudo"
+          >
+            <Routes>
+              <Route path="/" Component={Home} index></Route>
+              <Route path="/cursos" Component={Cursos}></Route>
+              <Route path="/carreiras" Component={Empresas}></Route>
+              <Route
+                path="/mais"
+                element={
+                  <Mais
+                    onModoMudado={() => {
+                      setDark(darkMode);
+                    }}
+                  />
+                }
+              >
+                <Route Component={Conta} index />
+                <Route path="senha" Component={Senha} />
+                <Route path="privacidade" Component={Privacidade} />
+                <Route path="central" Component={CentralAjuda} />
+              </Route>
 
-            <Route path="*" Component={Erro404}></Route>
-          </Routes>
-        </div>
-        <NavbarHome />
-      </Router>
+              <Route path="*" Component={Erro404}></Route>
+            </Routes>
+          </div>
+          <NavbarHome />
+        </Router>
+      </>
     );
   else
     return (
-      <Router>
-        {/* USUÁRIO NÃO LOGADO */}
-        <NavbarInicio />
-        <div className="testa">
-          <Routes>
-            <Route path="/" Component={Inicio} index></Route>
-            <Route path="/sobre" Component={Sobre}></Route>
-            <Route path="/contato" Component={Contato}></Route>
-            <Route path="/entrar" Component={EntrarCadastro}></Route>
+      <>
+        <Background dark={dark} />
+        <Router>
+          {/* USUÁRIO NÃO LOGADO */}
+          <NavbarInicio />
+          <div className="testa">
+            <Routes>
+              <Route path="/" Component={Inicio} index></Route>
+              <Route path="/sobre" Component={Sobre}></Route>
+              <Route path="/contato" Component={Contato}></Route>
+              <Route path="/entrar" Component={EntrarCadastro}></Route>
 
-            <Route path="*" Component={Erro404} index></Route>
-          </Routes>
-        </div>
-        <PopupPolitica />
-      </Router>
+              <Route path="*" Component={Erro404} index></Route>
+            </Routes>
+          </div>
+          <PopupPolitica />
+        </Router>
+      </>
     );
 }
