@@ -2,3 +2,45 @@
   letter-spacing: 2.56px;
   font-size: 2.5rem;
 }
+
+.scroll {
+  overflow-y: auto;
+  height: 78vh;
+}
+
+.scroll::-webkit-scrollbar {
+  background-color: #222;
+  border-radius: 9999px;
+  width: 11px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: var(--btnPrimary);
+  border-radius: 9999px;
+}
+
+/* perguntas */
+.pergunta {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.tituloPerg {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 1.5em 0;
+}
+
+.divider {
+  background-color: white;
+  margin-top: 1em;
+}
+
+.resposta {
+  padding: 0 2em;
+}
+
+.respostaTexto {
+  font-size: 1.1rem;
+}
