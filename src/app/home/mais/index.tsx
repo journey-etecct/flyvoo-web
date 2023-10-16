@@ -4,7 +4,7 @@ import { reverse } from "@/components/navbar_home";
 import { Outlet } from "react-router-dom";
 import NavBarMais from "@/components/navbar_mais";
 
-export default function Mais() {
+export default function Mais({ onModoMudado }: { onModoMudado: Function }) {
   return (
     <motion.div
       style={{
@@ -19,7 +19,7 @@ export default function Mais() {
       <div className={styles.main}>
         <Outlet />
       </div>
-      <NavBarMais />
+      <NavBarMais onModoMudado={onModoMudado} />
     </motion.div>
   );
 }
