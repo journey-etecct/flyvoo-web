@@ -8,12 +8,12 @@ export const CardsInteresse = () => {
   const numVisibleCards = 3;
 
   const cardsData = [
-    { id: 1, imgSrc: "/img/espacial.svg", title: "Espacial", stars: 3 },
-    { id: 2, imgSrc: "/img/logico.svg", title: "Matemática", stars: 3 },
-    { id: 3, imgSrc: "/img/naturalista.svg", title: "Naturalista", stars: 3 },
-    { id: 4, imgSrc: "/img/.svg", title: "Novo 1", stars: 3 },
-    { id: 5, imgSrc: "/img/.svg", title: "Novo 2", stars: 3 },
-    { id: 6, imgSrc: "/img/.svg", title: "Novo 3", stars: 3 },
+    { id: 1, imgSrc: "/img/espacial.svg", type: "espacial", title: "Espacial", stars: 3 },
+    { id: 2, imgSrc: "/img/logico.svg", type: "logico-matematica", title: "Matemática", stars: 3 },
+    { id: 3, imgSrc: "/img/naturalista.svg", type: "naturalista", title: "Naturalista", stars: 3 },
+    { id: 4, imgSrc: "/img/linguistica.svg", type: "linguistica", title: "Linguística", stars: 3 },
+    { id: 5, imgSrc: "/img/existencial.svg", type: "existencial", title: "Existencial", stars: 3 },
+    { id: 6, imgSrc: "/img/interpessoal.svg", type: "interpessoal", title: "Interpessoal", stars: 3 },
   ];
 
   const renderCard = (card) => {

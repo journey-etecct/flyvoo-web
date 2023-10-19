@@ -12,7 +12,6 @@ import { FaEye, FaEyeSlash }  from "react-icons/fa6";
 import handleGoogleLogin from "@/services/oauth/google";
 import handleMicrosoftLogin from '@/services/oauth/ms';
 
-
 export const queensidesL = localFont({
   src: "../../../public/fonts/queensides_light.ttf",
   
