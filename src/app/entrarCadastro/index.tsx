@@ -9,6 +9,7 @@ import { Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { georama } from "../inicio";
 import { FaEye, FaEyeSlash }  from "react-icons/fa6";
+import { criarConta } from "@/services/cadastro/post";
 import handleGoogleLogin from "@/services/oauth/google";
 import handleMicrosoftLogin from '@/services/oauth/ms';
 
@@ -128,7 +129,7 @@ export default function EntrarCadastro() {
             }
           />
           <div className={styles.btn}>
-            <button className={styles.Cadastrar} style={georama.style}>
+            <button className={styles.Cadastrar} style={georama.style} onClick={criarConta}>
               PRÓXIMO
             </button>
             <p className={styles.or}>OU</p>
