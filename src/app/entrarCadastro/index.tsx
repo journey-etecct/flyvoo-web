@@ -9,7 +9,7 @@ import { poppins500 } from "@/components/navbar_home";
 import { Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { georama } from "../inicio";
-import { FaEye, FaEyeSlash }  from "react-icons/fa6";
+import { FaEye, FaEyeSlash } from "react-icons/fa6"
 import { MouseEventHandler } from "react";
 import { criarConta } from "@/services/cadastro/post";
 import handleGoogleLogin from "@/services/oauth/google";
@@ -72,7 +72,7 @@ export default function EntrarCadastro() {
                 />
               )}
           </div>
-          <a href={undefined} style={poppins500.style} onClick={(e) => {e.preventDefault; navigate('/esqueceuSenha'); }}>
+          <a href={undefined} style={poppins500.style} onClick={(e) => {e.preventDefault(); navigate('/esqueceu'); }}>
             Esqueceu a senha?
           </a>
           <div className={styles.btn}>

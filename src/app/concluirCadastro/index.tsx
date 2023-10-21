@@ -1,11 +1,7 @@
-import { useEffect } from "react";
 import styles from "./index.module.css";
 import { georama } from "../inicio";
 
 export default function concluirCadastro() {
-  useEffect(() => {
-    document.title = "concluirCadastro";
-  });
 
   return (
 <div className={styles.container}>

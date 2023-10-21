@@ -19,7 +19,7 @@ export default function esqueceuSenha() {
       src='/img/emailEnviado.svg'
       alt='Envelope de email com um sinal de checado'
       />
-      <button className={styles.fecharButton} onClick={(e) => {e.preventDefault; navigate('/entrar'); }}>
+      <button className={styles.fecharButton} onClick={(e) => {e.preventDefault(); navigate('/entrar'); }}>
         Fechar
       </button>
     </div>
