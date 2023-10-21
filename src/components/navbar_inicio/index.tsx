@@ -10,7 +10,7 @@ import { useCookies } from "next-client-cookies";
 
 export let reverse: boolean;
 
-const telas: string[] = ["/", "/sobre", "/contato", "/entrar"];
+const telas: string[] = ["/", "/sobre", "/contato", "/entrar", "/verificaçãoEmail", "/esqueceuSenha"];
 export function mudarCoiso(path: string) {
   reverse = telas.indexOf(path) < telas.indexOf(location.pathname);
 }

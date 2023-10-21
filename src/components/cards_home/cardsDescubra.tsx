@@ -17,7 +17,7 @@ export const CardsDescubra = () => {
     { id: 6, imgSrc: "/img/testeEntrevista.svg", type: "intrapessoal", title: "Simular Entrevista", stars: 3 },
   ];
 
-  const renderCard = (card) => {
+  const renderCard = (card: { id: any; imgSrc: any; type?: string; title: any; stars: any; }) => {
     return (
       <div key={card.id} className={styles.card}>
         <div className={styles.cardContent}>

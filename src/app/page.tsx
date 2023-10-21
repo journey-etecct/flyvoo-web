@@ -5,6 +5,9 @@ import Inicio from "./inicio";
 import Contato from "./contato";
 import Sobre from "./sobre";
 import EntrarCadastro from "./entrarCadastro";
+import esqueceuSenha from "./esqueceuSenha";
+import vericacaoEmail from "./verificaçãoEmail";
+import concluirCadastro from "./concluirCadastro";
 import { AnimatePresence } from "framer-motion";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
@@ -50,6 +53,9 @@ export default function Root() {
             <Route path="/sobre" Component={Sobre}></Route>
             <Route path="/contato" Component={Contato}></Route>
             <Route path="/entrar" Component={EntrarCadastro}></Route>
+            <Route path="/esqueceuSenha" Component={esqueceuSenha}></Route>
+            <Route path="/verificaçãoEmail" Component={vericacaoEmail}></Route>
+            <Route path="/concluirCadastro" Component={concluirCadastro}></Route>
           </Routes>
         </div>
         <PopupPolitica />

@@ -16,7 +16,7 @@ export const CardsInteresse = () => {
     { id: 6, imgSrc: "/img/interpessoal.svg", type: "interpessoal", title: "Interpessoal", stars: 3 },
   ];
 
-  const renderCard = (card) => {
+  const renderCard = (card: { id: any; imgSrc: any; type?: string; title: any; stars: any; }) => {
     return (
       <div key={card.id} className={styles.card}>
         <div className={styles.cardContent}>

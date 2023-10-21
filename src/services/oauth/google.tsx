@@ -13,7 +13,6 @@ const handleGoogleLogin = () => {
       // As informações do usuário conectado.
       const user = result.user;
       // Dados do IdP disponíveis usando getAdditionalUserInfo(result)
-      // ...
     })
     .catch((error) => {
       // Lide com erros aqui..
