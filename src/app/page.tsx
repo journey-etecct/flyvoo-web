@@ -2,8 +2,8 @@
 import "./globals.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Inicio from "./inicio";
-import Contato from "./contato";
-import Sobre from "./sobre";
+import Contato from "./inicio/contato";
+import Sobre from "./inicio/sobre";
 import EntrarCadastro from "./entrarCadastro";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
