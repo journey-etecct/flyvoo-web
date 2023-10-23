@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
@@ -6,10 +8,11 @@ import localFont from "next/font/local";
 import { poppins500 } from "@/components/navbar_home";
 import { Georama, Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { MouseEventHandler } from "react";
+import { criarConta } from "@/services/cadastro/post";
 import handleGoogleLogin from "@/services/oauth/google";
 import handleMicrosoftLogin from "@/services/oauth/ms";
-import { georama800 } from "../inicio";
 
 export const queensidesL = localFont({
   src: "../../../public/fonts/queensides_light.ttf",
@@ -19,8 +22,15 @@ export const poppins700 = Poppins({ subsets: ["latin"], weight: "700" });
 export const georama700 = Georama({ subsets: ["latin"], weight: "700" });
 
 export default function EntrarCadastro() {
+  const navigate = useNavigate();
   /// [checado] pega o valor da checkbox
   const [checado, setChecado] = useState(false);
+  /// Responsável pela troca dos icones
+  const [showPassword, setShowPassword] = useState(false);
+
+  const exibirSenha = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <motion.div
@@ -39,14 +49,32 @@ export default function EntrarCadastro() {
             name="email"
             placeholder="Email"
           ></input>
-          <input
-            className={styles.Senha}
+          <div className={styles.containerSenha}>
+            <input
+              className={styles.Senha}
+              style={poppins500.style}
+              type={showPassword ? "text" : "password"}
+              name="senha"
+              id="Senha"
+              placeholder="Senha"
+            ></input>
+            {showPassword ? (
+              <FaEyeSlash
+                onClick={exibirSenha}
+                className={styles.hidePassword}
+              />
+            ) : (
+              <FaEye onClick={exibirSenha} className={styles.showPassword} />
+            )}
+          </div>
+          <a
+            href={undefined}
             style={poppins500.style}
-            type="password"
-            name="senha"
-            placeholder="Senha"
-          ></input>
-          <a href={undefined} style={poppins500.style}>
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/esqueceu");
+            }}
+          >
             Esqueceu a senha?
           </a>
           <div className={styles.btn}>
@@ -83,6 +111,7 @@ export default function EntrarCadastro() {
             className={styles.Email}
             style={poppins500.style}
             type="email"
+            id="emailCadastro"
             name="emailCadastro"
             placeholder="Email"
           ></input>
@@ -106,7 +135,11 @@ export default function EntrarCadastro() {
             }
           />
           <div className={styles.btn}>
-            <button className={styles.Cadastrar} style={georama700.style}>
+            <button
+              className={styles.Cadastrar}
+              style={georama700.style}
+              onClick={criarConta as MouseEventHandler<HTMLButtonElement>}
+            >
               PRÓXIMO
             </button>
             <p className={styles.or}>OU</p>

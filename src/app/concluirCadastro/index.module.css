@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.inputRow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.txt {
+    color: #fff;
+    font-size: 40px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.96px;
+}
+
+.inputsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.inputContainer {
+    margin: 10px 35px;
+    display: flex;
+    flex-direction: column;
+}
+  
+.label {
+    color: white;
+}
+
+.input {
+    font-family: 'Poppins', sans-serif;
+    background-color: #525252;
+    width: 240px;
+    padding: 0.4em 0.8em;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.selectInput {
+    color:black;
+    width: 240px;
+    padding: 0.4em 0.8em;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.checkoutContainer {
+    display: flex;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+  
+  .checkbox {
+    margin-right: 10px;
+}
+  
+  .smallText {
+    font-size: 12px;
+    margin-top: 5px;
+}
+  
+  .enviarButton {
+    padding: 0.6em;
+    border: none;
+    border-radius: 50px;
+    margin-top: 0.2em;
+    font-size: 20px;
+    width: 340px;
+    align-self: center;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #24837c;
+    color: white;
+    transition: background-color 0.3s;
+}
+  
+  .enviarButton:hover {
+    background-color: #1a635f;
+}

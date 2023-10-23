@@ -60,15 +60,45 @@
   margin-bottom: 15px;
 }
 
-.formEntrar .Senha {
+.containerSenha {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 440px;
   height: 45px;
   border: none;
   background-color: #525252;
   color: #ffffff;
   border-radius: 50px;
-  padding: 10px;
   margin-bottom: 10px;
+}
+
+.containerSenha .Senha {
+  width: 100%;
+  padding-left: 10px;
+  border: none;
+  background-color: #525252;
+  color: #ffffff;
+}
+
+.containerSenha .showPassword {
+  margin-inline: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.containerSenha .showPassword:hover {
+  cursor: pointer;
+}
+
+.containerSenha .hidePassword {
+  margin-inline: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.containerSenha .hidePassword:hover {
+  cursor: pointer;
 }
 
 .formEntrar a {
