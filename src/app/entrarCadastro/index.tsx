@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { reverse } from "@/components/navbar_inicio";
 import { motion } from "framer-motion";
@@ -8,15 +8,11 @@ import localFont from "next/font/local";
 import { poppins500 } from "@/components/navbar_home";
 import { Georama, Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { FaEye, FaEyeSlash } from "react-icons/fa6"
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { MouseEventHandler } from "react";
 import { criarConta } from "@/services/cadastro/post";
 import handleGoogleLogin from "@/services/oauth/google";
-import handleMicrosoftLogin from '@/services/oauth/ms';
-import { useState } from "react";
-import handleGoogleLogin from "@/services/oauth/google";
 import handleMicrosoftLogin from "@/services/oauth/ms";
-import { georama800 } from "../inicio";
 
 export const queensidesL = localFont({
   src: "../../../public/fonts/queensides_light.ttf",
@@ -35,7 +31,6 @@ export default function EntrarCadastro() {
   const exibirSenha = () => {
     setShowPassword(!showPassword);
   };
-
 
   return (
     <motion.div
@@ -63,19 +58,23 @@ export default function EntrarCadastro() {
               id="Senha"
               placeholder="Senha"
             ></input>
-              {showPassword ? (
-                <FaEyeSlash
-                  onClick={exibirSenha}
-                  className={styles.hidePassword}
-                />
-              ) : (
-                <FaEye
-                  onClick={exibirSenha}
-                  className={styles.showPassword}
-                />
-              )}
+            {showPassword ? (
+              <FaEyeSlash
+                onClick={exibirSenha}
+                className={styles.hidePassword}
+              />
+            ) : (
+              <FaEye onClick={exibirSenha} className={styles.showPassword} />
+            )}
           </div>
-          <a href={undefined} style={poppins500.style} onClick={(e) => {e.preventDefault(); navigate('/esqueceu'); }}>
+          <a
+            href={undefined}
+            style={poppins500.style}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/esqueceu");
+            }}
+          >
             Esqueceu a senha?
           </a>
           <div className={styles.btn}>
@@ -136,7 +135,11 @@ export default function EntrarCadastro() {
             }
           />
           <div className={styles.btn}>
-            <button className={styles.Cadastrar} style={georama700.style} onClick={criarConta as MouseEventHandler<HTMLButtonElement>}>
+            <button
+              className={styles.Cadastrar}
+              style={georama700.style}
+              onClick={criarConta as MouseEventHandler<HTMLButtonElement>}
+            >
               PRÓXIMO
             </button>
             <p className={styles.or}>OU</p>

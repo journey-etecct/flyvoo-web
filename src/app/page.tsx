@@ -8,7 +8,6 @@ import EntrarCadastro from "./entrarCadastro";
 import esqueceuSenha from "./esqueceuSenha";
 import vericacaoEmail from "./verificaçãoEmail";
 import concluirCadastro from "./concluirCadastro";
-import { AnimatePresence } from "framer-motion";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
@@ -105,8 +104,14 @@ export default function Root() {
               <Route path="/contato" Component={Contato}></Route>
               <Route path="/entrar" Component={EntrarCadastro}></Route>
               <Route path="/esqueceu" Component={esqueceuSenha}></Route>
-            <Route path="/verificaçãoEmail" Component={vericacaoEmail}></Route>
-            <Route path="/concluirCadastro" Component={concluirCadastro}></Route>
+              <Route
+                path="/verificaçãoEmail"
+                Component={vericacaoEmail}
+              ></Route>
+              <Route
+                path="/concluirCadastro"
+                Component={concluirCadastro}
+              ></Route>
 
               <Route path="*" Component={Erro404} index></Route>
             </Routes>
