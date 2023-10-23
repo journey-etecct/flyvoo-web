@@ -5,9 +5,6 @@ import Inicio from "./inicio";
 import Contato from "./contato";
 import Sobre from "./sobre";
 import EntrarCadastro from "./entrarCadastro";
-import esqueceuSenha from "./esqueceuSenha";
-import vericacaoEmail from "./verificaçãoEmail";
-import concluirCadastro from "./concluirCadastro";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
@@ -25,6 +22,9 @@ import { useEffect, useState } from "react";
 import { darkMode, mudarTema } from "@/services/tema";
 import $ from "jquery";
 import Background from "@/components/background";
+import EsqueceuSenha from "./esqueceuSenha";
+import VericacaoEmail from "./verificaçãoEmail";
+import ConcluirCadastro from "./concluirCadastro";
 
 export default function Root() {
   const cookies = useCookies();
@@ -103,14 +103,14 @@ export default function Root() {
               <Route path="/sobre" Component={Sobre}></Route>
               <Route path="/contato" Component={Contato}></Route>
               <Route path="/entrar" Component={EntrarCadastro}></Route>
-              <Route path="/esqueceu" Component={esqueceuSenha}></Route>
+              <Route path="/esqueceu" Component={EsqueceuSenha}></Route>
               <Route
                 path="/verificaçãoEmail"
-                Component={vericacaoEmail}
+                Component={VericacaoEmail}
               ></Route>
               <Route
                 path="/concluirCadastro"
-                Component={concluirCadastro}
+                Component={ConcluirCadastro}
               ></Route>
 
               <Route path="*" Component={Erro404} index></Route>
