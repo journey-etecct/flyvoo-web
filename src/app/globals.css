@@ -1,4 +1,4 @@
-@import "material-symbols";
+@import "material-symbols/rounded.css";
 @import "bootstrap-icons";
 
 :root {
@@ -39,6 +39,11 @@ body {
 * {
   color: white;
   text-decoration: none;
+  z-index: 0;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 .testa {
@@ -71,8 +76,4 @@ div.animacao {
 
 #conteudo {
   transition: filter 250ms;
-}
-
-#navbar:hover + #conteudo {
-  filter: blur(2px);
 }

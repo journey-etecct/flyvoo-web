@@ -1,0 +1,151 @@
+.titulo {
+  letter-spacing: 2.56px;
+  font-size: 2.5rem;
+}
+
+.info {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.info span {
+  color: #54a920;
+  font-size: xx-large;
+  margin-left: 0.25em;
+}
+
+/* foto de perfil */
+.label {
+  font-size: 20px;
+  margin-bottom: 0.5em;
+}
+
+.areaFoto {
+  display: flex;
+  margin-bottom: 2em;
+}
+
+.imgUsuario {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.infoFoto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.infoFoto p {
+  margin: 0 0 20px 0;
+  color: gray;
+  font-size: 16px;
+}
+
+.infoFoto p:first-child {
+  color: inherit;
+  margin: 0;
+  font-size: 14px;
+}
+
+.selecionarFotoBotao {
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0.55em 1.5em;
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: 1;
+  transition: background-color 250ms, opacity 100ms;
+}
+
+.selecionarFotoBotao:hover {
+  background-color: rgb(224, 224, 224);
+}
+
+.selecionarFotoBotao:active {
+  opacity: 0.5;
+}
+
+.selecionarFotoBotao span {
+  color: black;
+  margin-left: 0.25em;
+  font-size: 30px;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 30;
+}
+
+/* campos de informação */
+.gridCampos tbody tr td:last-child {
+  padding-left: 50px;
+}
+
+.inputTxt {
+  border: none;
+  max-lines: 1;
+  background-color: #525252;
+  border-radius: 9999px;
+  padding: 7px 15px;
+  font-size: 18px;
+}
+
+.inputTxt:focus {
+  outline: none;
+}
+
+.inputSel {
+  width: 290px;
+  padding: 7px 15px;
+  font-size: 15px;
+  background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>")
+      no-repeat,
+    #525252;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  border-bottom: 3px solid rgb(107, 107, 107);
+  color: white;
+  transition: border-bottom-width 50ms;
+  position: relative;
+  appearance: none;
+  background-position: calc(100% - 0.75rem) center !important;
+}
+
+.inputSel:active {
+  border-bottom-width: 0px;
+}
+
+.inputSel:focus {
+  outline: none;
+}
+
+.inputSel option {
+  color: white;
+}
+
+/* botao de esclusao da conta */
+.excluirBotao {
+  background-color: #bd1010;
+  padding: 0.75em 1.5em;
+  width: fit-content;
+  margin-top: 2em;
+  border-radius: 9999px;
+  font-size: 13px;
+  opacity: 1;
+  cursor: pointer;
+  transition: background-color 250ms, opacity 100ms;
+}
+
+.excluirBotao:hover {
+  background-color: #920c0c;
+}
+
+.excluirBotao:active {
+  opacity: 0.5;
+}

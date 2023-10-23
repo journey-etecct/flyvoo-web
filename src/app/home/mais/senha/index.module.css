@@ -1,0 +1,52 @@
+.titulo {
+  letter-spacing: 2.56px;
+  font-size: 2.5rem;
+}
+
+.campo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35rem;
+}
+
+.campo:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+
+.campo label {
+  font-size: 20px;
+  margin-bottom: 0.5em;
+}
+
+.campo input {
+  border: none;
+  max-lines: 1;
+  background-color: #525252;
+  border-radius: 9999px;
+  padding: 7px 15px;
+  font-size: 18px;
+}
+
+.campo input:focus {
+  outline: none;
+}
+
+.atualizarBtn {
+  width: fit-content;
+  cursor: pointer;
+  padding: 0.75em 1.5em;
+  font-size: 20px;
+  letter-spacing: 1.6px;
+  background-color: var(--btnPrimary);
+  border-radius: 9999px;
+  transition: background-color 250ms, opacity 100ms;
+}
+
+.atualizarBtn:hover {
+  background-color: var(--btnPrimaryHover);
+}
+
+.atualizarBtn:active {
+  opacity: 0.5;
+}

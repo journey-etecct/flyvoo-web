@@ -1,3 +1,4 @@
+
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth";
 import { MouseEventHandler } from "react";
 

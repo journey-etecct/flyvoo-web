@@ -25,7 +25,6 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
       </head>
       <body className={inter.className}>
-        <Background />
         <ClientCookiesProvider value={cookies().getAll()}>
           {children}
         </ClientCookiesProvider>
