@@ -2,7 +2,7 @@ import styles from "./index.module.css";
 import Image from "next/image";
 import { georama500 } from "@/components/navbar_mais";
 
-export default function vericacaoEmail() {
+export default function VericacaoEmail() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title} style={georama500.style}>
