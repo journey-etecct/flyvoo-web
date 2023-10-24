@@ -1,15 +1,10 @@
-import { useEffect } from "react";
 import styles from "./index.module.css";
-import { georama } from "../inicio";
+import { georama800 } from "../inicio";
 
-export default function concluirCadastro() {
-  useEffect(() => {
-    document.title = "concluirCadastro";
-  });
-
+export default function ConcluirCadastro() {
   return (
-<div className={styles.container}>
-      <h1 className={styles.txt} style={georama.style}>
+    <div className={styles.container}>
+      <h1 className={styles.txt} style={georama800.style}>
         Conclua seu Cadastro
       </h1>
 
@@ -76,9 +71,7 @@ export default function concluirCadastro() {
         Ao clicar em Concluir, você concorda com nossos Termos de Uso.
       </p>
 
-      <button className={styles.enviarButton}>
-        Concluir Cadastro
-      </button>
+      <button className={styles.enviarButton}>Concluir Cadastro</button>
     </div>
   );
 }

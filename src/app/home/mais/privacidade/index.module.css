@@ -1,0 +1,24 @@
+.titulo {
+  letter-spacing: 2.56px;
+  font-size: 2.5rem;
+}
+
+.termosScroll {
+  height: 82.5vh;
+  overflow-y: scroll;
+}
+
+.termosScroll h2:first-child {
+  margin-top: 0;
+}
+
+.termosScroll::-webkit-scrollbar {
+  background-color: #222;
+  border-radius: 9999px;
+  width: 11px;
+}
+
+.termosScroll::-webkit-scrollbar-thumb {
+  background-color: var(--btnPrimary);
+  border-radius: 9999px;
+}
