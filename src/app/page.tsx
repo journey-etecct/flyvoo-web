@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Inicio from "./inicio";
 import Contato from "./inicio/contato";
 import Sobre from "./inicio/sobre";
-import EntrarCadastro from "./entrarCadastro";
+import EntrarCadastro from "./inicio/entrarCadastro";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
