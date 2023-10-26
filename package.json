@@ -39,7 +39,9 @@
     "react-markdown": "^8.0.7",
     "react-router-dom": "^6.15.0",
     "react-spring": "^9.7.3",
-    "typescript": "5.1.6"
+    "safer-buffer": "^2.1.2",
+    "typescript": "5.1.6",
+    "whatwg-url": "^13.0.0"
   },
   "devDependencies": {
     "@types/google.maps": "^3.54.1",
