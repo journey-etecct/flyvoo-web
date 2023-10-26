@@ -1,5 +1,6 @@
 import { reverse } from "@/components/navbar_home";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Cursos() {
   return (
@@ -13,7 +14,7 @@ export default function Cursos() {
       initial={{ opacity: 0, top: reverse ? -50 : 50 }}
       animate={{ opacity: 1, top: 0 }}
     >
-      cursos
+      <Image src="" alt="" width={80} height={80} />
     </motion.div>
   );
 }
