@@ -22,7 +22,7 @@ import { useEffect, useState } from "react";
 import { darkMode, mudarTema } from "@/services/tema";
 import $ from "jquery";
 import Background from "@/components/background";
-import EsqueceuSenha from "./esqueceuSenha";
+import EsqueceuSenha from "./inicio/entrarCadastro/esqueceuSenha";
 import VericacaoEmail from "./verificaçãoEmail";
 import ConcluirCadastro from "./concluirCadastro";
 

@@ -15,7 +15,7 @@ import handleGoogleLogin from "@/services/oauth/google";
 import handleMicrosoftLogin from "@/services/oauth/ms";
 
 export const queensidesL = localFont({
-  src: "../../../public/fonts/queensides_light.ttf",
+  src: "../../../../public/fonts/queensides_light.ttf",
 });
 export const poppins400 = Poppins({ subsets: ["latin"], weight: "400" });
 export const poppins700 = Poppins({ subsets: ["latin"], weight: "700" });
