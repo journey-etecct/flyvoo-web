@@ -1,0 +1,10 @@
+.titulo {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 1em;
+}
+
+.lista {
+  overflow-y: auto;
+}
