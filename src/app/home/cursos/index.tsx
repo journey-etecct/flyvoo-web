@@ -10,11 +10,14 @@ const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
 export default function Cursos() {
   const [lista, setLista] = useState<number[]>([]);
 
-  useEffect(() => {
-    for (var i = 0; i == 50; i++) {
-      setLista((oldLista) => [...oldLista, i]);
+  function _pegarListaCursos(): number[] {
+    let listaTemp: number[] = [];
+    for (let i = 0; i <= 20; i++) {
+      listaTemp.push(i);
     }
-  }, [setLista]);
+    setLista(listaTemp);
+    return lista;
+  }
 
   return (
     <motion.div
@@ -32,9 +35,10 @@ export default function Cursos() {
         Cursos
       </h1>
       <div className={styles.lista}>
-        {lista.map((index) => {
-          return <CardCursos key={index} index={index} />;
-        })}
+        <CardCursos index={2} />
+        <CardCursos index={2} />
+        <CardCursos index={2} />
+        {_pegarListaCursos().toString()}
       </div>
     </motion.div>
   );
