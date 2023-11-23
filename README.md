@@ -1,4 +1,4 @@
-# Flyvoo WEB (React)
+# Flyvoo WEB (Next-js com Typescript)
 
 O projeto tem dois Router's (um pra quando o usuário está logado e outro para quando o usuário <b>NÂO</b> estiver logado). O primeiro vai estar marcado com um `// USUÁRIO LOGADO` e o outro vai estar marcado com `// USUÁRIO NÃO LOGADO`.
 
