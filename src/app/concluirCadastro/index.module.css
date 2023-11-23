@@ -12,7 +12,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 20px;
 }
 
 .txt {
@@ -21,12 +20,6 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: 0.96px;
-}
-
-.inputsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
   
 .inputContainer {
@@ -37,19 +30,27 @@
   
 .label {
     color: white;
+    margin-bottom: 5px;
+    height: 100%;
 }
 
 .input {
     font-family: 'Poppins', sans-serif;
     background-color: #525252;
     width: 240px;
+    height: 100%;
     padding: 0.4em 0.8em;
     border: none;
     border-radius: 20px;
     font-size: 1rem;
     font-weight: bold;
-    margin-top: 5px;
 }
+
+.inputContainer input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  }
 
 .selectInput {
     color:black;
@@ -63,6 +64,7 @@
 
 .checkoutContainer {
     display: flex;
+    justify-content: center;
     font-size: 1em;
     font-weight: bold;
     margin-top: 5px;
@@ -81,7 +83,7 @@
     padding: 0.6em;
     border: none;
     border-radius: 50px;
-    margin-top: 0.2em;
+    margin-block: 0.2em;
     font-size: 20px;
     width: 340px;
     align-self: center;
