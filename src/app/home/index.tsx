@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import styles from "./index.module.css";
 import { CardsInteresse } from "@/components/cards_home/cardsInteresse";
 import { CardsDescubra } from "@/components/cards_home/cardsDescubra";
+import { carreiraData } from "@/components/cards_home/carreiraData";
 import { motion } from "framer-motion";
 import { reverse } from "@/components/navbar_home";
 
@@ -29,7 +30,7 @@ export default function Home() {
       <h2 className={styles.subtitulo}>Com base nos seus interesses:</h2>
       <CardsInteresse />
       <h2 className={styles.subtitulo}>Descubra novos horizontes:</h2>
-      <CardsDescubra />
+      <CardsDescubra carreiraLista={carreiraData} />
     </motion.div>
   );
 }
