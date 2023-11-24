@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./index.module.css";
-import { Button } from "@mui/material-next";
 import { Inter } from "next/font/google";
 
 const inter600 = Inter({ subsets: ["latin"], weight: "600" });
@@ -22,9 +21,11 @@ export default function CardCursos({
       <div className={styles.info}>
         <h2>Nome do curso</h2>
         <p>Faculdade(s):</p>
-        <Button variant="filled">
-          <p style={{ ...inter600.style, margin: 0 }}>Ver mais</p>
-        </Button>
+        <button className={styles.btnVerMais}>
+          <p style={{ ...inter600.style, margin: 0, fontSize: "16px" }}>
+            Ver mais
+          </p>
+        </button>
       </div>
     </div>
   );

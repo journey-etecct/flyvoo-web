@@ -12,6 +12,7 @@ export default function Cursos() {
   const [lista, setLista] = useState<number[]>([]);
 
   useEffect(
+    // pegar lista de cursos quando iniciar
     function () {
       let listaTemp: number[] = [];
       for (let i = 0; i <= 50; i++) {
