@@ -4,20 +4,23 @@ import styles from "./index.module.css";
 import { Nunito } from "next/font/google";
 import { useEffect, useState } from "react";
 import CardCursos from "@/components/cards_cursos";
+import { Divider } from "@mui/material";
 
 const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
 
 export default function Cursos() {
   const [lista, setLista] = useState<number[]>([]);
 
-  function _pegarListaCursos(): number[] {
-    let listaTemp: number[] = [];
-    for (let i = 0; i <= 20; i++) {
-      listaTemp.push(i);
-    }
-    setLista(listaTemp);
-    return lista;
-  }
+  useEffect(
+    function () {
+      let listaTemp: number[] = [];
+      for (let i = 0; i <= 50; i++) {
+        listaTemp.push(i);
+      }
+      setLista(listaTemp);
+    },
+    [setLista]
+  );
 
   return (
     <motion.div
@@ -35,10 +38,29 @@ export default function Cursos() {
         Cursos
       </h1>
       <div className={styles.lista}>
-        <CardCursos index={2} />
-        <CardCursos index={2} />
-        <CardCursos index={2} />
-        {_pegarListaCursos().toString()}
+        {lista.map((elemento) =>
+          elemento != lista[lista.length - 1] ? (
+            <div key={elemento} style={{ display: "block" }}>
+              <CardCursos
+                index={elemento}
+                nome="Nome do curso"
+                faculdades={[]}
+              />
+              <Divider
+                className={styles.divider}
+                sx={{ margin: "0 15em" }}
+                variant="middle"
+              />
+            </div>
+          ) : (
+            <CardCursos
+              faculdades={[]}
+              nome="Nome do curso"
+              key={elemento}
+              index={elemento}
+            />
+          )
+        )}
       </div>
     </motion.div>
   );

@@ -16,6 +16,7 @@
     "@floating-ui/react": "^0.26.0",
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.10",
+    "@mui/material-next": "^6.0.0-alpha.110",
     "@types/node": "20.5.4",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
