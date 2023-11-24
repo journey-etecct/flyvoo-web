@@ -1,0 +1,32 @@
+.card {
+  margin: 10px 10em;
+  height: fit-content;
+  padding: 2em;
+  display: flex;
+}
+
+.imagem {
+  align-self: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 22px;
+  margin-right: 1em;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.info h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.info Button {
+  align-self: flex-end;
+}

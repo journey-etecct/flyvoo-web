@@ -18,7 +18,7 @@ import $ from "jquery";
 import { useFloating } from "@floating-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Georama } from "next/font/google";
-import { georama700 } from "@/app/entrarCadastro";
+import { georama700 } from "@/app/inicio/entrarCadastro";
 
 type Telas = string[][];
 

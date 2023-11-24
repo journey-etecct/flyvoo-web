@@ -1,0 +1,27 @@
+.titulo {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 1em;
+}
+
+.lista {
+  display: block;
+  overflow-y: auto;
+  height: 90%;
+}
+
+.lista::-webkit-scrollbar {
+  background-color: #222;
+  border-radius: 9999px;
+  width: 11px;
+}
+
+.lista::-webkit-scrollbar-thumb {
+  background-color: var(--btnPrimary);
+  border-radius: 9999px;
+}
+
+.divider {
+  background-color: white;
+}
