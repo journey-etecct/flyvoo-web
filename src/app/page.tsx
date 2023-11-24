@@ -26,6 +26,7 @@ import EsqueceuSenha from "./inicio/entrarCadastro/esqueceuSenha";
 import VericacaoEmail from "./verificaçãoEmail";
 import ConcluirCadastro from "./concluirCadastro";
 
+
 export default function Root() {
   const cookies = useCookies();
   var logado: boolean = cookies.get("logado") == "true";
