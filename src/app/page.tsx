@@ -25,28 +25,47 @@ import Background from "@/components/background";
 import EsqueceuSenha from "./inicio/entrarCadastro/esqueceuSenha";
 import VericacaoEmail from "./verificaçãoEmail";
 import ConcluirCadastro from "./concluirCadastro";
+import PopupCursos from "@/components/popup_cursos";
 
+export type Curso = {
+  UNESP?: Faculdade;
+  UNIFESP?: Faculdade;
+  USP?: Faculdade;
+  "Universidade Cruzeiro do Sul"?: Faculdade;
+  IFSP?: Faculdade;
+  SPTech?: Faculdade;
+};
+export type Faculdade = string;
+export const cursoExemplo: Curso = {
+  UNESP: "google.com",
+  IFSP: "google.com",
+};
 
 export default function Root() {
   const cookies = useCookies();
-  var logado: boolean = cookies.get("logado") == "true";
+  var logado: boolean = cookies.get("logado") === "true";
   const [dark, setDark] = useState(true);
+  const [popupCursos, setPopupCursos] = useState(false);
+  const [ppCNome, setPpCNome] = useState("");
+  const [ppCFaculdades, setPpCFaculdades] = useState<Faculdade[]>([]);
 
   useEffect(() => {
-    const html = document.documentElement;
-    html.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
-
-    mudarTema(cookies.get("dark") == "true");
-
-    $("#navbar")
-      .on("mouseenter", () => {
-        $("#conteudo").css("filter", "blur(2px)");
-      })
-      .on("mouseleave", () => {
-        $("#conteudo").css("filter", "blur(0)");
+    $(() => {
+      const html = document.documentElement;
+      html.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
       });
+
+      mudarTema(cookies.get("dark") == "true");
+
+      $("#navbar")
+        .on("mouseenter", () => {
+          $("#conteudo").css("filter", "blur(2px)");
+        })
+        .on("mouseleave", () => {
+          $("#conteudo").css("filter", "blur(0)");
+        });
+    });
   });
 
   if (logado)
@@ -66,7 +85,16 @@ export default function Root() {
           >
             <Routes>
               <Route path="/" Component={Home} index></Route>
-              <Route path="/cursos" Component={Cursos}></Route>
+              <Route
+                path="/cursos"
+                element={
+                  <Cursos
+                    setPpCNome={setPpCNome}
+                    setPpCFaculdades={setPpCFaculdades}
+                    setPopupCursos={setPopupCursos}
+                  />
+                }
+              ></Route>
               <Route path="/carreiras" Component={Empresas}></Route>
               <Route
                 path="/mais"
@@ -88,6 +116,9 @@ export default function Root() {
             </Routes>
           </div>
           <NavbarHome />
+          {popupCursos && (
+            <PopupCursos nome={ppCNome} faculdades={ppCFaculdades} />
+          )}
         </Router>
       </>
     );

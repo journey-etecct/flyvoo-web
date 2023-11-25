@@ -2,13 +2,22 @@ import { reverse } from "@/components/navbar_home";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
 import { Nunito } from "next/font/google";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CardCursos from "@/components/cards_cursos";
 import { Divider } from "@mui/material";
+import { Faculdade } from "@/app/page";
 
 const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
 
-export default function Cursos() {
+export default function Cursos({
+  setPpCNome,
+  setPpCFaculdades,
+  setPopupCursos,
+}: {
+  setPpCNome: Dispatch<SetStateAction<string>>;
+  setPpCFaculdades: Dispatch<SetStateAction<Faculdade[]>>;
+  setPopupCursos: Dispatch<SetStateAction<boolean>>;
+}) {
   const [lista, setLista] = useState<number[]>([]);
 
   useEffect(
@@ -46,6 +55,9 @@ export default function Cursos() {
                 index={elemento}
                 nome="Nome do curso"
                 faculdades={[]}
+                setPpCNome={setPpCNome}
+                setPpCFaculdades={setPpCFaculdades}
+                setPopupCursos={setPopupCursos}
               />
               <Divider
                 className={styles.divider}
@@ -56,6 +68,9 @@ export default function Cursos() {
           ) : (
             <CardCursos
               faculdades={[]}
+              setPpCNome={setPpCNome}
+              setPpCFaculdades={setPpCFaculdades}
+              setPopupCursos={setPopupCursos}
               nome="Nome do curso"
               key={elemento}
               index={elemento}

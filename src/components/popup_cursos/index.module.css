@@ -1,0 +1,11 @@
+.ppCBG {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
