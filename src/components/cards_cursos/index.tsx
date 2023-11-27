@@ -24,7 +24,7 @@ export default function CardCursos({
   return (
     <div className={styles.card}>
       <div className={styles.imagem}>
-        <Image src={"/img/robsongostoso.png"} alt="" fill />
+        <Image src={"/img/robsongostoso.png"} alt="" fill priority />
       </div>
       <div className={styles.info}>
         <h2>Nome do curso</h2>

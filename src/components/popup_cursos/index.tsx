@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import { IconButton } from "@mui/material";
+import Image from "next/image";
 
 export default function PopupCursos({
   nome,
@@ -34,7 +35,18 @@ export default function PopupCursos({
       >
         <h1 className={styles.titulo}>{nome}</h1>
         {/* TODO: lista de cursos */}
-
+        <div className={styles.grade}>
+          <div>
+            <div className={styles.img}>
+              <Image src={"/img/robsongostoso.png"} alt="" fill />
+            </div>
+          </div>
+          <div>UCS</div>
+          <div>UNIFESP</div>
+          <div>SPTech</div>
+          <div>UNESP</div>
+          <div>IFSP</div>
+        </div>
         <IconButton
           aria-label="fechar"
           onClick={() => {

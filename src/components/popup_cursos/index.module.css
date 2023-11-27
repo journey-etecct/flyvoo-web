@@ -34,3 +34,17 @@
   margin-top: 50px;
   font-size: 70px;
 }
+
+.grade {
+  display: grid;
+  grid-template-areas:
+    'USP UCS'
+    'UNIFESP SPTech'
+    'UNESP IFSP';
+  margin: 1em 2em;
+  gap: 1px;
+}
+
+.grade>div {
+  background-color: aqua;
+}
