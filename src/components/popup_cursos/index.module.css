@@ -9,3 +9,28 @@
   align-items: center;
   backdrop-filter: blur(4px);
 }
+
+.ppC {
+  width: 40vw;
+  height: 80vh;
+  background-color: #252525;
+  border-radius: 50px;
+  overflow: visible;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fechar {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.titulo {
+  margin-left: 50px;
+  margin-top: 50px;
+  font-size: 70px;
+}

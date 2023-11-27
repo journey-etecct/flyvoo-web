@@ -8,10 +8,10 @@
 .imagem {
   align-self: center;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 130px;
+  height: 120px;
   border-radius: 22px;
-  margin-right: 1em;
+  margin-right: 2em;
 }
 
 .info {

@@ -121,10 +121,12 @@ export default function NavBarMais({
   });
 
   useEffect(() => {
-    setModoEscuro(cookies.get("dark") == "true");
+    $(() => {
+      setModoEscuro(cookies.get("dark") == "true");
 
-    $("." + styles.sair).on("click", () => {
-      console.log("saindo...");
+      $("." + styles.sair).on("click", () => {
+        console.log("saindo...");
+      });
     });
   }, [cookies]);
 

@@ -26,6 +26,7 @@ import EsqueceuSenha from "./inicio/entrarCadastro/esqueceuSenha";
 import VericacaoEmail from "./verificaçãoEmail";
 import ConcluirCadastro from "./concluirCadastro";
 import PopupCursos from "@/components/popup_cursos";
+import { AnimatePresence } from "framer-motion";
 
 export type Curso = {
   UNESP?: Faculdade;
@@ -116,9 +117,15 @@ export default function Root() {
             </Routes>
           </div>
           <NavbarHome />
-          {popupCursos && (
-            <PopupCursos nome={ppCNome} faculdades={ppCFaculdades} />
-          )}
+          <AnimatePresence mode="sync">
+            {popupCursos && (
+              <PopupCursos
+                nome={ppCNome}
+                faculdades={ppCFaculdades}
+                fechar={setPopupCursos}
+              />
+            )}
+          </AnimatePresence>
         </Router>
       </>
     );
