@@ -16,6 +16,7 @@ import Empresas from "./home/empresas";
 import Mais from "./home/mais";
 import Conta from "./home/mais/conta";
 import Senha from "./home/mais/senha";
+import Teste from "./teste/index";
 import Privacidade from "./home/mais/privacidade";
 import CentralAjuda from "./home/mais/centralAjuda";
 import { useEffect, useState } from "react";
@@ -104,6 +105,7 @@ export default function Root() {
               <Route path="/contato" Component={Contato}></Route>
               <Route path="/entrar" Component={EntrarCadastro}></Route>
               <Route path="/esqueceu" Component={EsqueceuSenha}></Route>
+              <Route path="/teste" Component={Teste}></Route> {/* temporario */}
               <Route
                 path="/verificaçãoEmail"
                 Component={VericacaoEmail}
