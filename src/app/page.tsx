@@ -28,7 +28,7 @@ import ConcluirCadastro from "./concluirCadastro";
 import PopupCursos from "@/components/popup_cursos";
 import { AnimatePresence } from "framer-motion";
 
-export type Curso = {
+export type ListaFaculdades = {
   UNESP?: Faculdade;
   UNIFESP?: Faculdade;
   USP?: Faculdade;
@@ -36,11 +36,28 @@ export type Curso = {
   IFSP?: Faculdade;
   SPTech?: Faculdade;
 };
-export type Faculdade = string;
-export const cursoExemplo: Curso = {
-  UNESP: "google.com",
-  IFSP: "google.com",
+export type Curso = {
+  key: string;
+  "faculdade(s)": ListaFaculdades;
 };
+export type Faculdade = string;
+export const cursoExemplo1: Curso = {
+  key: "Administração",
+  "faculdade(s)": {
+    UNESP: "google.com",
+    USP: "google.com",
+  },
+};
+export const cursoExemplo2: Curso = {
+  key: "Informática para Internet",
+  "faculdade(s)": {
+    IFSP: "google.com",
+    UNIFESP: "google.com",
+    SPTech: "google.com",
+  },
+};
+
+export const listaDeCursos: Curso[] = [cursoExemplo1, cursoExemplo2];
 
 export default function Root() {
   const cookies = useCookies();

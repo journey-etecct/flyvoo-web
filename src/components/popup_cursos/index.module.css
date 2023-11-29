@@ -46,5 +46,33 @@
 }
 
 .grade>div {
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.btnVerMais {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  border-radius: 50px;
+  background-color: rgb(0, 128, 119);
+  padding: 0.5em 1em;
+  opacity: 1;
+  transition: opacity 100ms, background-color 100ms;
+  border: 0;
+  cursor: pointer;
+}
+
+.btnVerMais:hover {
+  background-color: rgb(0, 136, 127);
+}
+
+.btnVerMais:active {
+  opacity: 0.5;
 }

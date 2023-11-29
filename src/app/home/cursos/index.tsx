@@ -5,7 +5,7 @@ import { Nunito } from "next/font/google";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CardCursos from "@/components/cards_cursos";
 import { Divider } from "@mui/material";
-import { Faculdade } from "@/app/page";
+import { Curso, Faculdade, listaDeCursos } from "@/app/page";
 
 const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
 
@@ -18,16 +18,12 @@ export default function Cursos({
   setPpCFaculdades: Dispatch<SetStateAction<Faculdade[]>>;
   setPopupCursos: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [lista, setLista] = useState<number[]>([]);
+  const [lista, setLista] = useState<Curso[]>([]);
 
   useEffect(
     // pegar lista de cursos quando iniciar
     function () {
-      let listaTemp: number[] = [];
-      for (let i = 0; i <= 50; i++) {
-        listaTemp.push(i);
-      }
-      setLista(listaTemp);
+      setLista(listaDeCursos);
     },
     [setLista]
   );
@@ -50,11 +46,10 @@ export default function Cursos({
       <div className={styles.lista}>
         {lista.map((elemento) =>
           elemento != lista[lista.length - 1] ? (
-            <div key={elemento} style={{ display: "block" }}>
+            <div key={elemento.key} style={{ display: "block" }}>
               <CardCursos
-                index={elemento}
-                nome="Nome do curso"
-                faculdades={[]}
+                nome={elemento.key}
+                faculdades={elemento["faculdade(s)"]}
                 setPpCNome={setPpCNome}
                 setPpCFaculdades={setPpCFaculdades}
                 setPopupCursos={setPopupCursos}
@@ -67,13 +62,12 @@ export default function Cursos({
             </div>
           ) : (
             <CardCursos
-              faculdades={[]}
+              faculdades={elemento["faculdade(s)"]}
               setPpCNome={setPpCNome}
               setPpCFaculdades={setPpCFaculdades}
               setPopupCursos={setPopupCursos}
-              nome="Nome do curso"
-              key={elemento}
-              index={elemento}
+              nome={elemento.key}
+              key={elemento.key}
             />
           )
         )}
