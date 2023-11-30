@@ -8,6 +8,7 @@ import EntrarCadastro from "./entrarCadastro";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
+import NavbarQuestoes from "@/components/navbar_questoes";
 import { useCookies } from "next-client-cookies";
 import PopupPolitica from "@/components/blablabla";
 import Erro404 from "./404";
@@ -16,7 +17,7 @@ import Empresas from "./home/empresas";
 import Mais from "./home/mais";
 import Conta from "./home/mais/conta";
 import Senha from "./home/mais/senha";
-import Teste from "./teste/index";
+import Teste from "./home/teste/index";
 import Privacidade from "./home/mais/privacidade";
 import CentralAjuda from "./home/mais/centralAjuda";
 import { useEffect, useState } from "react";
@@ -49,12 +50,15 @@ export default function Root() {
       });
   });
 
+  const isPaginaQuestoes = window.location.pathname === "/teste";
+
   if (logado)
     return (
       <>
         <Background dark={dark} />
         <Router>
           {/* USUÁRIO LOGADO */}
+          {isPaginaQuestoes ? <NavbarQuestoes /> : <NavbarHome />}
           <div
             style={{
               marginLeft: "9em",
@@ -68,6 +72,7 @@ export default function Root() {
               <Route path="/" Component={Home} index></Route>
               <Route path="/cursos" Component={Cursos}></Route>
               <Route path="/carreiras" Component={Empresas}></Route>
+              <Route path="/teste" Component={Teste}></Route>
               <Route
                 path="/mais"
                 element={
@@ -87,7 +92,6 @@ export default function Root() {
               <Route path="*" Component={Erro404}></Route>
             </Routes>
           </div>
-          <NavbarHome />
         </Router>
       </>
     );
@@ -97,7 +101,6 @@ export default function Root() {
         <Background dark={dark} />
         <Router>
           {/* USUÁRIO NÃO LOGADO */}
-          <NavbarInicio />
           <div className="testa">
             <Routes>
               <Route path="/" Component={Inicio} index></Route>
@@ -105,7 +108,6 @@ export default function Root() {
               <Route path="/contato" Component={Contato}></Route>
               <Route path="/entrar" Component={EntrarCadastro}></Route>
               <Route path="/esqueceu" Component={EsqueceuSenha}></Route>
-              <Route path="/teste" Component={Teste}></Route> {/* temporario */}
               <Route
                 path="/verificaçãoEmail"
                 Component={VericacaoEmail}

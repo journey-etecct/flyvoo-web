@@ -48,7 +48,7 @@ select::-ms-expand {
 
 .testa {
   margin-top: 10vh;
-  display: contents; /* Flex< mudança feita para centralizar as questões  */
+  display: flex; /* Flex< mudança feita para centralizar as questões  */
   height: 90vh;
 }
 
