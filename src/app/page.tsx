@@ -8,7 +8,7 @@ import EntrarCadastro from "./entrarCadastro";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
-import NavbarQuestoes from "@/components/navbar_questoes";
+import NavbarQuestoes from "@/components/navbar_questoes"
 import { useCookies } from "next-client-cookies";
 import PopupPolitica from "@/components/blablabla";
 import Erro404 from "./404";
@@ -50,6 +50,7 @@ export default function Root() {
       });
   });
 
+  // Verifica se está na página de questões
   const isPaginaQuestoes = window.location.pathname === "/teste";
 
   if (logado)
@@ -60,7 +61,7 @@ export default function Root() {
           {/* USUÁRIO LOGADO */}
           {isPaginaQuestoes ? <NavbarQuestoes /> : <NavbarHome />}
           <div
-            style={{
+            style={isPaginaQuestoes ? {} : {
               marginLeft: "9em",
               position: "absolute",
               width: "calc(100vw - 9em)",
@@ -101,6 +102,7 @@ export default function Root() {
         <Background dark={dark} />
         <Router>
           {/* USUÁRIO NÃO LOGADO */}
+          {isPaginaQuestoes ? <NavbarQuestoes /> : <NavbarInicio />}
           <div className="testa">
             <Routes>
               <Route path="/" Component={Inicio} index></Route>
