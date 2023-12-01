@@ -1,74 +1,99 @@
-import { useState } from "react";
-import styles from "@/app/home/index.module.css";
-import Image from "next/image";
-import { FaAngleRight, FaAngleLeft, FaRegStar } from "react-icons/fa6";
+// CardsInteresse.tsx
+import { useEffect, useState } from 'react';
+import { FaAngleRight, FaAngleLeft, FaRegStar } from 'react-icons/fa6';
+import Image from 'next/image';
+import { Carreira, carreiraData } from './carreiraData';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import firebaseApp from '@/services/firebase';
+import styles from '@/app/home/index.module.css';
 
-export const CardsInteresse = () => {
-  const [startIdx, setStartIdx] = useState(0);
+interface Props {
+  userId: string;
+}
+
+export const CardsInteresse: React.FC<Props> = ({ userId }) => {
+  const [startIndex, setStartIndex] = useState(0);
   const numVisibleCards = 3;
+  const [selectedCareers, setSelectedCareers] = useState<Carreira[]>([]);
 
-  const cardsData = [
-    { id: 1, imgSrc: "/img/espacial.svg", type: "espacial", title: "Espacial", stars: 3 },
-    { id: 2, imgSrc: "/img/logico.svg", type: "logico-matematica", title: "Matemática", stars: 3 },
-    { id: 3, imgSrc: "/img/naturalista.svg", type: "naturalista", title: "Naturalista", stars: 3 },
-    { id: 4, imgSrc: "/img/linguistica.svg", type: "linguistica", title: "Linguística", stars: 3 },
-    { id: 5, imgSrc: "/img/existencial.svg", type: "existencial", title: "Existencial", stars: 3 },
-    { id: 6, imgSrc: "/img/interpessoal.svg", type: "interpessoal", title: "Interpessoal", stars: 3 },
-  ];
+  useEffect(() => {
+    const database = getDatabase(firebaseApp);
+    const userRef = ref(database, `users/${userId}/area`);
 
-  const renderCard = (card: { id: any; imgSrc: any; type?: string; title: any; stars: any; }) => {
-    return (
-      <div key={card.id} className={styles.card}>
-        <div className={styles.cardContent}>
-          <Image
-            className={styles.img}
-            width={90}
-            height={90}
-            src={card.imgSrc}
-            alt={card.title}
-          />
-          <p className={styles.tituloCard}>{card.title}</p>
-          <p>
-            {[...Array(card.stars)].map((_, i) => (
-              <FaRegStar
-                key={i}
-                style={{ fill: "yellow", width: 25, height: 25 }}
-              />
-            ))}
-          </p>
-          <button className={styles.btnCard}>Iníciar</button>
-        </div>
-      </div>
-    );
+    const unsubscribe = onValue(userRef, (snapshot) => {
+      const userArea = snapshot.val();
+      console.log('User Area:', userArea);
+
+      // Busca todas as carreiras correspondentes ao nome da inteligência
+      const userCareers = findMatchingCareers(userArea);
+
+      setSelectedCareers(userCareers || []);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [userId]);
+
+  const findMatchingCareers = (userArea: string): Carreira[] => {
+    const userIntelligence = userArea.toLowerCase();
+    const matchingCareers: Carreira[] = [];
+
+    carreiraData.forEach((carreira) => {
+      carreira.tipo.forEach((tipo) => {
+        const typeIntelligence = tipo.inteligencia.toLowerCase();
+
+        // Verifica a correspondência da inteligência
+        if (userIntelligence.includes(typeIntelligence)) {
+          matchingCareers.push(carreira);
+        }
+      });
+    });
+
+    return matchingCareers;
   };
 
   const nextCard = () => {
-    setStartIdx((prevStartIdx) =>
-      (prevStartIdx + 1) % (cardsData.length - numVisibleCards + 1)
-    );
+    setStartIndex((prevIndex) => (prevIndex + 1) % selectedCareers.length);
   };
 
   const prevCard = () => {
-    setStartIdx((prevStartIdx) =>
-      prevStartIdx === 0
-        ? cardsData.length - numVisibleCards
-        : prevStartIdx - 1
+    setStartIndex((prevIndex) =>
+      prevIndex === 0 ? selectedCareers.length - numVisibleCards : prevIndex - 1
     );
   };
 
   return (
     <div className={styles.cardContainer}>
       <button className={styles.Left} onClick={prevCard}>
-        <FaAngleLeft style={{ fill: "#000000" }} className={styles.Icons} />
+        <FaAngleLeft style={{ fill: '#000000' }} className={styles.Icons} />
       </button>
       <div className={styles.cards}>
-        {[...Array(numVisibleCards)].map((_, index) => {
-          const cardIndex = (startIdx + index) % cardsData.length;
-          return renderCard(cardsData[cardIndex]);
-        })}
+        {selectedCareers.slice(startIndex, startIndex + numVisibleCards).map((selectedCareer, index) => (
+          <div key={index} className={styles.card}>
+            {selectedCareer && (
+              <>
+                <Image
+                  className={styles.img}
+                  width={90}
+                  height={90}
+                  src={selectedCareer.imgSrc}
+                  alt={selectedCareer.titulo}
+                />
+                <p className={styles.tituloCard}>{selectedCareer.titulo}</p>
+                <p>
+                  {[...Array(selectedCareer.estrelas)].map((_, i) => (
+                    <FaRegStar key={i} style={{ fill: 'yellow', width: 25, height: 25 }} />
+                  ))}
+                </p>
+                <button className={styles.btnCard}>Iniciar</button>
+              </>
+            )}
+          </div>
+        ))}
       </div>
       <button className={styles.Right} onClick={nextCard}>
-        <FaAngleRight style={{ fill: "#000000" }} className={styles.Icons} />
+        <FaAngleRight style={{ fill: '#000000' }} className={styles.Icons} />
       </button>
     </div>
   );

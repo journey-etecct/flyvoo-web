@@ -1,4 +1,3 @@
-// index.js
 import { useEffect } from "react";
 import styles from "./index.module.css";
 import { CardsInteresse } from "@/components/cards_home/cardsInteresse";
@@ -11,6 +10,9 @@ export default function Home() {
   useEffect(() => {
     document.title = "Início";
   });
+
+  const userId = 'zMWepf4YgTTaTUC2xA9I0wZbziv2';
+
   return (
     <motion.div
       style={{
@@ -28,7 +30,9 @@ export default function Home() {
         </h1>
       </div>
       <h2 className={styles.subtitulo}>Com base nos seus interesses:</h2>
-      <CardsInteresse />
+
+      <CardsInteresse userId={userId} />
+
       <h2 className={styles.subtitulo}>Descubra novos horizontes:</h2>
       <CardsDescubra carreiraLista={carreiraData} />
     </motion.div>
