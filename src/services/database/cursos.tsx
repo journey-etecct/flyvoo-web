@@ -22,6 +22,17 @@ export function iniciar(setLista: Dispatch<SetStateAction<Curso[]>>) {
     });
 
     console.log(listaDeCursos);
-    /* setLista(listaDeCursos); */
+    setLista(listaDeCursos);
   });
+}
+
+export { listaDeCursos };
+
+enum Faculdades {
+  sptech,
+  unesp,
+  ifsp,
+  unifesp,
+  ucs,
+  usp,
 }

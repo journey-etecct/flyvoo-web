@@ -67,10 +67,26 @@ export default function CardCursos({
   setPpCFaculdades: Dispatch<SetStateAction<ListaFaculdades>>;
   setPopupCursos: Dispatch<SetStateAction<boolean>>;
 }) {
+  function _pegarImagemFaculdade(faculdades: ListaFaculdades): string {
+    if (faculdades.USP != null) {
+      return "/img/faculdades/usp.webp";
+    } else if (faculdades["Universidade Cruzeiro do Sul"] != null) {
+      return "/img/faculdades/ucs.webp";
+    } else if (faculdades.UNIFESP != null) {
+      return "/img/faculdades/unifesp.webp";
+    } else if (faculdades.IFSP != null) {
+      return "/img/faculdades/ifsp.webp";
+    } else if (faculdades.UNESP != null) {
+      return "/img/faculdades/unesp.webp";
+    } else {
+      return "/img/faculdades/sptech.webp";
+    }
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.imagem}>
-        <Image src={"/img/robsongostoso.png"} alt="" fill priority />
+        <Image src={_pegarImagemFaculdade(faculdades)} alt="" fill priority />
       </div>
       <div className={styles.info}>
         <h2>{nome}</h2>

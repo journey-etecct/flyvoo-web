@@ -6,9 +6,10 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CardCursos from "@/components/cards_cursos";
 import { Divider } from "@mui/material";
 import { Curso, ListaFaculdades } from "@/app/page";
-import { iniciar } from "@/services/database/cursos";
+import { iniciar, listaDeCursos } from "@/services/database/cursos";
 
 const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
+let iniciado: boolean = false;
 
 export default function Cursos({
   setPpCNome,
@@ -22,8 +23,12 @@ export default function Cursos({
   const [lista, setLista] = useState<Curso[]>([]);
 
   useEffect(function () {
-    iniciar(setLista);
-    /* setLista(listaDeCursos); */
+    if (!iniciado) {
+      iniciar(setLista);
+      iniciado = true;
+    } else {
+      setLista(listaDeCursos);
+    }
   }, []);
 
   return (
