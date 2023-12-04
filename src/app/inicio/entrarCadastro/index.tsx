@@ -8,11 +8,14 @@ import localFont from "next/font/local";
 import { poppins500 } from "@/components/navbar_home";
 import { Georama, Poppins } from "next/font/google";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { MouseEventHandler } from "react";
 import { criarConta } from "@/services/cadastro/post";
 import handleGoogleLogin from "@/services/oauth/google";
 import handleMicrosoftLogin from "@/services/oauth/ms";
+import { logar } from "@/services/login/get";
+import { logarGoogle } from "@/services/oauth/get/google";
+import { logarMicrosoft } from "@/services/oauth/get/ms";
+
 
 export const queensidesL = localFont({
   src: "../../../../public/fonts/queensides_light.ttf",
@@ -25,12 +28,6 @@ export default function EntrarCadastro() {
   const navigate = useNavigate();
   /// [checado] pega o valor da checkbox
   const [checado, setChecado] = useState(false);
-  /// Responsável pela troca dos icones
-  const [showPassword, setShowPassword] = useState(false);
-
-  const exibirSenha = () => {
-    setShowPassword(!showPassword);
-  };
 
   return (
     <motion.div
@@ -47,27 +44,19 @@ export default function EntrarCadastro() {
             style={poppins500.style}
             type="email"
             name="email"
+            id="emailLogin"
             placeholder="Email"
           ></input>
-          <div className={styles.containerSenha}>
             <input
               className={styles.Senha}
               style={poppins500.style}
-              type={showPassword ? "text" : "password"}
+              type="password"
               name="senha"
-              id="Senha"
+              id="senhaLogin"
               placeholder="Senha"
             ></input>
-            {showPassword ? (
-              <FaEyeSlash
-                onClick={exibirSenha}
-                className={styles.hidePassword}
-              />
-            ) : (
-              <FaEye onClick={exibirSenha} className={styles.showPassword} />
-            )}
-          </div>
           <a
+            className={styles.links}
             href={undefined}
             style={poppins500.style}
             onClick={(e) => {
@@ -78,11 +67,11 @@ export default function EntrarCadastro() {
             Esqueceu a senha?
           </a>
           <div className={styles.btn}>
-            <button className={styles.Entrar} style={georama700.style}>
+            <button className={styles.Entrar} onClick={logar as MouseEventHandler<HTMLButtonElement>} style={georama700.style}>
               ENTRAR
             </button>
             <p className={styles.or}>OU</p>
-            <a href={undefined} onClick={handleMicrosoftLogin}>
+            <a href={undefined} onClick={logarMicrosoft}>
               <Image
                 className={styles.img}
                 width={60}
@@ -91,7 +80,7 @@ export default function EntrarCadastro() {
                 alt="Microsoft"
               />
             </a>
-            <a href={undefined} onClick={handleGoogleLogin}>
+            <a href={undefined} onClick={logarGoogle}>
               <Image
                 className={styles.img}
                 width={60}
@@ -126,7 +115,7 @@ export default function EntrarCadastro() {
           <FormControlLabel
             checked={checado}
             onClick={() => setChecado(!checado)}
-            control={<Checkbox required />}
+            control={<Checkbox />}
             label={
               <div style={poppins700.style}>
                 Eu aceito os <a>Termos de Uso</a> e{" "}

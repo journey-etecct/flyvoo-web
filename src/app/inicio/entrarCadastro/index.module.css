@@ -60,7 +60,7 @@
   margin-bottom: 15px;
 }
 
-.containerSenha {
+.formEntrar .Senha {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -71,42 +71,16 @@
   color: #ffffff;
   border-radius: 50px;
   margin-bottom: 10px;
+  padding-inline: 10px;
 }
 
-.containerSenha .Senha {
-  width: 100%;
-  padding-left: 10px;
-  border: none;
-  background-color: #525252;
-  color: #ffffff;
-}
-
-.containerSenha .showPassword {
-  margin-inline: 20px;
-  width: 20px;
-  height: 20px;
-}
-
-.containerSenha .showPassword:hover {
-  cursor: pointer;
-}
-
-.containerSenha .hidePassword {
-  margin-inline: 20px;
-  width: 20px;
-  height: 20px;
-}
-
-.containerSenha .hidePassword:hover {
-  cursor: pointer;
-}
-
-.formEntrar a {
+.formEntrar .links {
   text-decoration: underline;
   color: #00fff0;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   margin-block: 10px;
+  width: 160px;
 }
 
 .formEntrar .btn {
@@ -152,7 +126,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  object-fit: none;
+  object-fit: scale-down;
   margin-left: 13px;
   transition: background-color 250ms;
 }
@@ -250,7 +224,7 @@
 .formCadastrar .btn .img {
   border: 1px solid white;
   border-radius: 50%;
-  object-fit: none;
+  object-fit: scale-down;
   margin-left: 13px;
   transition: background-color 250ms;
 }

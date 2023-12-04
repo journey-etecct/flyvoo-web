@@ -8,13 +8,14 @@ import { motion } from "framer-motion";
 import { reverse } from "@/components/navbar_home";
 
 export default function Home() {
+  const userEmail = localStorage.getItem('userEmail');
   useEffect(() => {
     document.title = "Início";
   });
   return (
     <motion.div
       style={{
-        width: "90%",
+        width: "97%",
         height: "100%",
         position: "absolute",
       }}
@@ -24,7 +25,7 @@ export default function Home() {
     >
       <div className={styles.tituloImg}>
         <h1 className={styles.titulo}>
-          Bem vindo (a)! <br /> Você tem 0 notificações
+          Bem vindo {userEmail}! <br /> Você tem 0 notificações
         </h1>
       </div>
       <h2 className={styles.subtitulo}>Com base nos seus interesses:</h2>

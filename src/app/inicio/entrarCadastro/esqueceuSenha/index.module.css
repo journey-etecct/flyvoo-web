@@ -5,19 +5,68 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
-  
 
-  
-  .fecharButton {
+.container input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  margin-top: 4%;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 30px;
+}
+
+.img {
+  margin-left: 30px;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.img:hover {
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: start;
+  margin-left: 230px;
+}
+
+.form p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.form .Email {
+  width: 440px;
+  height: 40px;
+  border: none;
+  background-color: #525252;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 10px;
+  margin-block: 15px;
+  margin-bottom: 31px;
+}
+
+ .form .enviarBtn {
     padding: 0.6em;
     border: none;
     border-radius: 50px;
     margin-top: 0.2em;
-    font-size: 20px;
-    width: 340px;
-    align-self: center;
+    font-size: 16px;
+    width: 100px;
     font-weight: bold;
     cursor: pointer;
     background-color: #24837c;
@@ -25,6 +74,6 @@
     transition: background-color 0.3s;
 }
   
-  .fecharButton:hover {
+  .enviarBtn:hover {
     background-color: #1a635f;
 }
