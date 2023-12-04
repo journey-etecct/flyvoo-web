@@ -21,7 +21,6 @@ export function iniciar(setLista: Dispatch<SetStateAction<Curso[]>>) {
       });
     });
 
-    console.log(listaDeCursos);
     setLista(listaDeCursos);
   });
 }

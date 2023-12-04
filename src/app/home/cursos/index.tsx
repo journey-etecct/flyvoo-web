@@ -8,7 +8,7 @@ import { Divider } from "@mui/material";
 import { Curso, ListaFaculdades } from "@/app/page";
 import { iniciar, listaDeCursos } from "@/services/database/cursos";
 
-const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
+export const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
 let iniciado: boolean = false;
 
 export default function Cursos({
