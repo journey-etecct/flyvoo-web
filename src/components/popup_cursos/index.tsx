@@ -1,10 +1,11 @@
 import { Faculdade, ListaFaculdades } from "@/app/page";
 import styles from "./index.module.css";
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { IconButton } from "@mui/material";
 import Image from "next/image";
 import { inter600 } from "../cards_cursos";
+import { iniciar } from "@/services/database/cursos";
 
 export default function PopupCursos({
   nome,
@@ -35,7 +36,6 @@ export default function PopupCursos({
         exit={{ opacity: 0, transition: { ease: "easeOut", duration: 0.15 } }}
       >
         <h1 className={styles.titulo}>{nome}</h1>
-        {/* TODO: lista de cursos */}
         <div className={styles.grade}>
           <div
             className={faculdades.USP == null ? styles.disabled : ""}

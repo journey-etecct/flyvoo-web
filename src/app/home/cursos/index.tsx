@@ -5,7 +5,8 @@ import { Nunito } from "next/font/google";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CardCursos from "@/components/cards_cursos";
 import { Divider } from "@mui/material";
-import { Curso, ListaFaculdades, listaDeCursos } from "@/app/page";
+import { Curso, ListaFaculdades } from "@/app/page";
+import { iniciar } from "@/services/database/cursos";
 
 const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
 
@@ -20,13 +21,10 @@ export default function Cursos({
 }) {
   const [lista, setLista] = useState<Curso[]>([]);
 
-  useEffect(
-    // pegar lista de cursos quando iniciar
-    function () {
-      setLista(listaDeCursos);
-    },
-    [setLista]
-  );
+  useEffect(function () {
+    iniciar(setLista);
+    /* setLista(listaDeCursos); */
+  }, []);
 
   return (
     <motion.div
@@ -46,9 +44,9 @@ export default function Cursos({
       <div className={styles.lista}>
         {lista.map((elemento) =>
           elemento != lista[lista.length - 1] ? (
-            <div key={elemento.key} style={{ display: "block" }}>
+            <div key={elemento.nome} style={{ display: "block" }}>
               <CardCursos
-                nome={elemento.key}
+                nome={elemento.nome}
                 faculdades={elemento["faculdade(s)"]}
                 setPpCNome={setPpCNome}
                 setPpCFaculdades={setPpCFaculdades}
@@ -66,8 +64,8 @@ export default function Cursos({
               setPpCNome={setPpCNome}
               setPpCFaculdades={setPpCFaculdades}
               setPopupCursos={setPopupCursos}
-              nome={elemento.key}
-              key={elemento.key}
+              nome={elemento.nome}
+              key={elemento.nome}
             />
           )
         )}
