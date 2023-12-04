@@ -23,6 +23,10 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+        <link
+          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+          rel="stylesheet"
+        />
       </head>
       <body className={inter.className}>
         <ClientCookiesProvider value={cookies().getAll()}>

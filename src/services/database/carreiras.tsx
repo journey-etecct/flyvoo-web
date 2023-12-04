@@ -1,5 +1,13 @@
-import { DataSnapshot, getDatabase, onValue, ref } from "firebase/database";
+import { getDatabase, onValue, ref } from "firebase/database";
 import { Dispatch, ReactElement, SetStateAction } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPerson,
+  faPeopleCarryBox,
+  faSquareRootVariable,
+  faHeadphonesSimple,
+  faTree,
+} from "@fortawesome/free-solid-svg-icons";
 
 const db = getDatabase();
 const carreirasRef = ref(db, "/carreiras/");
@@ -12,7 +20,6 @@ export function iniciar(setLista: Dispatch<SetStateAction<Carreira[]>>) {
       listaDeCarreirasDB.push(carreiraSnapshot.val());
     });
 
-    console.log(listaDeCarreirasDB);
     setLista(listaDeCarreirasDB);
   });
 }
@@ -58,22 +65,41 @@ export type InteligenciasLista = {
 export function iconeArea(area: Area): ReactElement {
   switch (area) {
     case Area.corporalCin:
-      return <div></div>;
+      return (
+        <span className="material-symbols-rounded iconeCarreira">
+          sports_tennis
+        </span>
+      );
     case Area.existencial:
-      return <div></div>;
+      return <i className="bx bxs-brain iconeCarreira"></i>;
     case Area.intrapessoal:
-      return <div></div>;
+      return <FontAwesomeIcon className="iconeCarreira" icon={faPerson} />;
     case Area.espacial:
-      return <div></div>;
+      return (
+        <span className="material-symbols-rounded iconeCarreira">globe</span>
+      );
     case Area.interpessoal:
-      return <div></div>;
+      return (
+        <FontAwesomeIcon className="iconeCarreira" icon={faPeopleCarryBox} />
+      );
     case Area.linguistica:
-      return <div></div>;
+      return (
+        <span className="material-symbols-rounded iconeCarreira">
+          translate
+        </span>
+      );
     case Area.logicoMat:
-      return <div></div>;
+      return (
+        <FontAwesomeIcon
+          className="iconeCarreira"
+          icon={faSquareRootVariable}
+        />
+      );
     case Area.musical:
-      return <div></div>;
+      return (
+        <FontAwesomeIcon className="iconeCarreira" icon={faHeadphonesSimple} />
+      );
     default: /* naturalista */
-      return <div></div>;
+      return <FontAwesomeIcon className="iconeCarreira" icon={faTree} />;
   }
 }

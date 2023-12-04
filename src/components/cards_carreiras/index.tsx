@@ -1,7 +1,11 @@
 import styles from "./index.module.css";
 import { Inter } from "next/font/google";
-import { Area, InteligenciasLista } from "@/services/database/carreiras";
-import { useEffect } from "react";
+import {
+  Area,
+  InteligenciasLista,
+  iconeArea,
+} from "@/services/database/carreiras";
+import { ReactElement, useEffect } from "react";
 
 export const inter600 = Inter({ subsets: ["latin"], weight: "600" });
 
@@ -95,7 +99,9 @@ export default function CardCarreiras({
   };
   cargaHoraria: string;
 }) {
-  function _pegarIconeCarreira(inteligencias: InteligenciasLista): void {
+  function _pegarIconeCarreira(
+    inteligencias: InteligenciasLista
+  ): ReactElement {
     let listaArray: { area: Area; porcentagem: number }[] = [];
 
     if (inteligencias.corporalCin != null) {
@@ -155,17 +161,12 @@ export default function CardCarreiras({
 
     listaArray.sort((a, b) => b.porcentagem - a.porcentagem);
     let maiorArea: Area = listaArray[0].area;
+    return iconeArea(maiorArea);
   }
-
-  useEffect(() => {
-    _pegarIconeCarreira(inteligencias);
-  });
 
   return (
     <div className={styles.card}>
-      <div className={styles.imagem}>
-        {/* TODO: inteligencia maior _pegarIconeCarreira() */}
-      </div>
+      <div className={styles.imagem}>{_pegarIconeCarreira(inteligencias)}</div>
       <div className={styles.info}>
         <h2>{nome}</h2>
         <p>Inteligência(s): {inteligenciasToString(inteligencias)}</p>
