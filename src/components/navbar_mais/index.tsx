@@ -18,7 +18,7 @@ import $ from "jquery";
 import { useFloating } from "@floating-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Georama } from "next/font/google";
-import { georama700 } from "@/app/entrarCadastro";
+import { georama700 } from "@/app/inicio/entrarCadastro";
 
 type Telas = string[][];
 
@@ -121,10 +121,12 @@ export default function NavBarMais({
   });
 
   useEffect(() => {
-    setModoEscuro(cookies.get("dark") == "true");
+    $(() => {
+      setModoEscuro(cookies.get("dark") == "true");
 
-    $("." + styles.sair).on("click", () => {
-      console.log("saindo...");
+      $("." + styles.sair).on("click", () => {
+        console.log("saindo...");
+      });
     });
   }, [cookies]);
 

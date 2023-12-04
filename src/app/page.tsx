@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Inicio from "./inicio";
 import Contato from "./inicio/contato";
 import Sobre from "./inicio/sobre";
-import EntrarCadastro from "./entrarCadastro";
+import EntrarCadastro from "./inicio/entrarCadastro";
 import Home from "./home";
 import NavbarInicio from "@/components/navbar_inicio";
 import NavbarHome from "@/components/navbar_home";
@@ -22,31 +22,51 @@ import { useEffect, useState } from "react";
 import { darkMode, mudarTema } from "@/services/tema";
 import $ from "jquery";
 import Background from "@/components/background";
-import EsqueceuSenha from "./esqueceuSenha";
+import EsqueceuSenha from "./inicio/entrarCadastro/esqueceuSenha";
 import VericacaoEmail from "./verificaçãoEmail";
 import ConcluirCadastro from "./concluirCadastro";
+import PopupCursos from "@/components/popup_cursos";
+import { AnimatePresence } from "framer-motion";
 
+export type ListaFaculdades = {
+  UNESP?: Faculdade;
+  UNIFESP?: Faculdade;
+  USP?: Faculdade;
+  "Universidade Cruzeiro do Sul"?: Faculdade;
+  IFSP?: Faculdade;
+  SPTech?: Faculdade;
+};
+export type Curso = {
+  nome: string;
+  "faculdade(s)": ListaFaculdades;
+};
+export type Faculdade = string;
 
 export default function Root() {
   const cookies = useCookies();
-  var logado: boolean = cookies.get("logado") == "true";
+  var logado: boolean = cookies.get("logado") === "true";
   const [dark, setDark] = useState(true);
+  const [popupCursos, setPopupCursos] = useState(false);
+  const [ppCNome, setPpCNome] = useState("");
+  const [ppCFaculdades, setPpCFaculdades] = useState<ListaFaculdades>({});
 
   useEffect(() => {
-    const html = document.documentElement;
-    html.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
-
-    mudarTema(cookies.get("dark") == "true");
-
-    $("#navbar")
-      .on("mouseenter", () => {
-        $("#conteudo").css("filter", "blur(2px)");
-      })
-      .on("mouseleave", () => {
-        $("#conteudo").css("filter", "blur(0)");
+    $(() => {
+      const html = document.documentElement;
+      html.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
       });
+
+      mudarTema(cookies.get("dark") == "true");
+
+      $("#navbar")
+        .on("mouseenter", () => {
+          $("#conteudo").css("filter", "blur(2px)");
+        })
+        .on("mouseleave", () => {
+          $("#conteudo").css("filter", "blur(0)");
+        });
+    });
   });
 
   if (logado)
@@ -66,7 +86,16 @@ export default function Root() {
           >
             <Routes>
               <Route path="/" Component={Home} index></Route>
-              <Route path="/cursos" Component={Cursos}></Route>
+              <Route
+                path="/cursos"
+                element={
+                  <Cursos
+                    setPpCNome={setPpCNome}
+                    setPpCFaculdades={setPpCFaculdades}
+                    setPopupCursos={setPopupCursos}
+                  />
+                }
+              ></Route>
               <Route path="/carreiras" Component={Empresas}></Route>
               <Route
                 path="/mais"
@@ -88,6 +117,15 @@ export default function Root() {
             </Routes>
           </div>
           <NavbarHome />
+          <AnimatePresence mode="sync">
+            {popupCursos && (
+              <PopupCursos
+                nome={ppCNome}
+                faculdades={ppCFaculdades}
+                fechar={setPopupCursos}
+              />
+            )}
+          </AnimatePresence>
         </Router>
       </>
     );

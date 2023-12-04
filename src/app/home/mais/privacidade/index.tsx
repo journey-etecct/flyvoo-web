@@ -1,7 +1,7 @@
 import { reverse } from "@/components/navbar_mais";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
-import { poppins700 } from "@/app/entrarCadastro";
+import { poppins700 } from "@/app/inicio/entrarCadastro";
 import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
 import utf8Decode from "@/services/utf8/decoder";

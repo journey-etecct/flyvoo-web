@@ -1,0 +1,97 @@
+.ppCBG {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.ppC {
+  min-width: 685px;
+  width: 40vw;
+  height: 80vh;
+  background-color: #252525;
+  border-radius: 50px;
+  overflow: visible;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fechar {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.titulo {
+  margin: 50px;
+  font-size: 70px;
+}
+
+.grade {
+  flex: 5;
+  display: grid;
+  grid-template-areas:
+    'USP UCS'
+    'UNIFESP SPTech'
+    'UNESP IFSP';
+  margin: 1em 2em;
+  gap: 10px;
+}
+
+.grade>div {
+  background-color: rgba(255, 255, 255, 0.192);
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.btnVerMais {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: rgb(0, 128, 119);
+  padding: 0.5em 1em;
+  opacity: 1;
+  transition: opacity 100ms, background-color 100ms;
+  border: 0;
+  cursor: pointer;
+}
+
+
+
+.btnVerMais:hover:not(div.disabled>*) {
+  background-color: rgb(0, 136, 127);
+}
+
+.btnVerMais:active:not(div.disabled>*) {
+  opacity: 0.5;
+}
+
+div.disabled>.img {
+  filter: grayscale();
+}
+
+div.disabled>.btnVerMais {
+  background-color: #252525;
+  pointer-events: none;
+}
+
+div.disabled>.btnVerMais>p {
+  color: #858585;
+}

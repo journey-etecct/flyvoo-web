@@ -97,12 +97,15 @@ const concluirCadastro2: React.FC<concluirCadastro2Props> = ({ telefone }) => {
             onChange={(e) => setArea(e.target.value)}
           >
             <option value="Nenhuma">Selecione</option>
-            <option value="carreira1">Carreira1</option>
-            <option value="carreira2">Carreira2</option>
-            <option value="carreira3">Carreira3</option>
-            <option value="carreira4">Carreira4</option>
-            <option value="carreira5">Carreira5</option>
-            <option value="carreira6">Carreira6</option>
+            <option value="carreira1">Corporal Cinestésico</option>
+            <option value="carreira2">Espacial</option>
+            <option value="carreira3">Existencial</option>
+            <option value="carreira4">Interpessoal</option>
+            <option value="carreira5">Intrapessoal</option>
+            <option value="carreira6">Linguística</option>
+            <option value="carreira7">Lógico Matemática</option>
+            <option value="carreira8">Musical</option>
+            <option value="carreira9">Naturalista</option>
           </select>
         </div>
       </div>

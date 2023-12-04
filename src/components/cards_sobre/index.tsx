@@ -2,13 +2,15 @@ import React from "react";
 import styles from "@/app/inicio/sobre/index.module.css";
 import Image from "next/image";
 
-interface CardSobreProps {
+function CardSobre({
+  nome,
+  descricao,
+  foto,
+}: {
   nome: string;
   descricao: string;
   foto: string;
-}
-
-const CardSobre: React.FC<CardSobreProps> = ({ nome, descricao, foto }) => {
+}) {
   return (
     <div className={styles.cardMembro}>
       <div
@@ -36,6 +38,6 @@ const CardSobre: React.FC<CardSobreProps> = ({ nome, descricao, foto }) => {
       </div>
     </div>
   );
-};
+}
 
 export default CardSobre;

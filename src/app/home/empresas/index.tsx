@@ -12,6 +12,8 @@ export default function Empresas() {
       }}
       initial={{ opacity: 0, top: reverse ? -50 : 50 }}
       animate={{ opacity: 1, top: 0 }}
-    ></motion.div>
+    >
+      carreiras
+    </motion.div>
   );
 }

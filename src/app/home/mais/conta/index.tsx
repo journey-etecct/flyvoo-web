@@ -1,4 +1,4 @@
-import { poppins700 } from "@/app/entrarCadastro";
+import { poppins700 } from "@/app/inicio/entrarCadastro";
 import { reverse } from "@/components/navbar_mais";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";

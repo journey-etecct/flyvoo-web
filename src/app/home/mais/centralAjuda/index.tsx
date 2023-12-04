@@ -1,7 +1,7 @@
 import { reverse } from "@/components/navbar_mais";
 import { motion } from "framer-motion";
 import styles from "./index.module.css";
-import { poppins700 } from "@/app/entrarCadastro";
+import { poppins700 } from "@/app/inicio/entrarCadastro";
 import DATA from "./data";
 import { Divider, IconButton } from "@mui/material";
 import { useState } from "react";
