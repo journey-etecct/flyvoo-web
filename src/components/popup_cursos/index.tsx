@@ -1,4 +1,4 @@
-import { Faculdade } from "@/app/page";
+import { Faculdade, ListaFaculdades } from "@/app/page";
 import styles from "./index.module.css";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
@@ -12,7 +12,7 @@ export default function PopupCursos({
   fechar,
 }: {
   nome: string;
-  faculdades: Faculdade[];
+  faculdades: ListaFaculdades;
   fechar: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
@@ -30,74 +30,123 @@ export default function PopupCursos({
       <motion.div
         className={styles.ppC}
         style={{ zIndex: 999, transform: "translate(-50%, -50%)" }}
-        initial={{ transform: "scale(1.1) translate(-45%, -45%)" }}
+        initial={{ transform: "scale(1.05) translate(-47.5%, -47.5%)" }}
         animate={{ transform: "scale(1) translate(-50%, -50%)" }}
         exit={{ opacity: 0, transition: { ease: "easeOut", duration: 0.15 } }}
       >
         <h1 className={styles.titulo}>{nome}</h1>
         {/* TODO: lista de cursos */}
         <div className={styles.grade}>
-          <div style={{ display: "flex", position: "relative" }}>
+          <div
+            className={faculdades.USP == null ? styles.disabled : ""}
+            style={{ display: "flex", position: "relative" }}
+          >
             <div className={styles.img}>
-              <Image src={"/img/robsongostoso.png"} alt="" fill />
+              <Image src={"/img/faculdades/usp.webp"} alt="" fill />
             </div>
             <h2>USP</h2>
-            <a className={styles.btnVerMais} target="_blank">
+            <a
+              href={faculdades.USP}
+              className={styles.btnVerMais}
+              target="_blank"
+            >
               <p style={{ ...inter600.style, margin: 0, fontSize: "16px" }}>
                 Ver mais
               </p>
             </a>
           </div>
-          <div style={{ display: "flex", position: "relative" }}>
+          <div
+            className={
+              faculdades["Universidade Cruzeiro do Sul"] == null
+                ? styles.disabled
+                : ""
+            }
+            style={{ display: "flex", position: "relative" }}
+          >
             <div className={styles.img}>
-              <Image src={"/img/robsongostoso.png"} alt="" fill />
+              <Image src={"/img/faculdades/ucs.webp"} alt="" fill />
             </div>
-            <h2>UCS</h2>
-            <a className={styles.btnVerMais} target="_blank">
+            <h2>
+              Cruzeiro
+              <br /> do Sul
+            </h2>
+            <a
+              href={faculdades["Universidade Cruzeiro do Sul"]}
+              className={styles.btnVerMais}
+              target="_blank"
+            >
               <p style={{ ...inter600.style, margin: 0, fontSize: "16px" }}>
                 Ver mais
               </p>
             </a>
           </div>
-          <div style={{ display: "flex", position: "relative" }}>
+          <div
+            className={faculdades.UNIFESP == null ? styles.disabled : ""}
+            style={{ display: "flex", position: "relative" }}
+          >
             <div className={styles.img}>
-              <Image src={"/img/robsongostoso.png"} alt="" fill />
+              <Image src={"/img/faculdades/unifesp.webp"} alt="" fill />
             </div>
             <h2>UNIFESP</h2>
-            <a className={styles.btnVerMais} target="_blank">
+            <a
+              href={faculdades.UNIFESP}
+              className={styles.btnVerMais}
+              target="_blank"
+            >
               <p style={{ ...inter600.style, margin: 0, fontSize: "16px" }}>
                 Ver mais
               </p>
             </a>
           </div>
-          <div style={{ display: "flex", position: "relative" }}>
+          <div
+            className={faculdades.SPTech == null ? styles.disabled : ""}
+            style={{ display: "flex", position: "relative" }}
+          >
             <div className={styles.img}>
-              <Image src={"/img/robsongostoso.png"} alt="" fill />
+              <Image src={"/img/faculdades/sptech.webp"} alt="" fill />
             </div>
             <h2>SPTech</h2>
-            <a className={styles.btnVerMais} target="_blank">
+            <a
+              href={faculdades.SPTech}
+              className={styles.btnVerMais}
+              target="_blank"
+            >
               <p style={{ ...inter600.style, margin: 0, fontSize: "16px" }}>
                 Ver mais
               </p>
             </a>
           </div>
-          <div style={{ display: "flex", position: "relative" }}>
+          <div
+            className={faculdades.UNESP == null ? styles.disabled : ""}
+            style={{ display: "flex", position: "relative" }}
+          >
             <div className={styles.img}>
-              <Image src={"/img/robsongostoso.png"} alt="" fill />
+              <Image src={"/img/faculdades/unesp.webp"} alt="" fill />
             </div>
             <h2>UNESP</h2>
-            <a className={styles.btnVerMais} target="_blank">
+            <a
+              href={faculdades.UNESP}
+              className={styles.btnVerMais}
+              target="_blank"
+            >
               <p style={{ ...inter600.style, margin: 0, fontSize: "16px" }}>
                 Ver mais
               </p>
             </a>
           </div>
-          <div style={{ display: "flex", position: "relative" }}>
+          <div
+            className={faculdades.IFSP == null ? styles.disabled : ""}
+            style={{ display: "flex", position: "relative" }}
+          >
             <div className={styles.img}>
-              <Image src={"/img/robsongostoso.png"} alt="" fill />
+              <Image src={"/img/faculdades/ifsp.webp"} alt="" fill />
             </div>
             <h2>IFSP</h2>
-            <a className={styles.btnVerMais} target="_blank">
+            <a
+              href={faculdades.IFSP}
+              className={styles.btnVerMais}
+              target="_blank"
+            >
               <p style={{ ...inter600.style, margin: 0, fontSize: "16px" }}>
                 Ver mais
               </p>

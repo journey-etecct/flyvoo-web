@@ -5,7 +5,7 @@ import { Nunito } from "next/font/google";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CardCursos from "@/components/cards_cursos";
 import { Divider } from "@mui/material";
-import { Curso, Faculdade, listaDeCursos } from "@/app/page";
+import { Curso, ListaFaculdades, listaDeCursos } from "@/app/page";
 
 const nunito900 = Nunito({ subsets: ["latin"], weight: "900" });
 
@@ -15,7 +15,7 @@ export default function Cursos({
   setPopupCursos,
 }: {
   setPpCNome: Dispatch<SetStateAction<string>>;
-  setPpCFaculdades: Dispatch<SetStateAction<Faculdade[]>>;
+  setPpCFaculdades: Dispatch<SetStateAction<ListaFaculdades>>;
   setPopupCursos: Dispatch<SetStateAction<boolean>>;
 }) {
   const [lista, setLista] = useState<Curso[]>([]);

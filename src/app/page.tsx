@@ -65,7 +65,7 @@ export default function Root() {
   const [dark, setDark] = useState(true);
   const [popupCursos, setPopupCursos] = useState(false);
   const [ppCNome, setPpCNome] = useState("");
-  const [ppCFaculdades, setPpCFaculdades] = useState<Faculdade[]>([]);
+  const [ppCFaculdades, setPpCFaculdades] = useState<ListaFaculdades>({});
 
   useEffect(() => {
     $(() => {

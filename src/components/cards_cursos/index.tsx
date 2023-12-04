@@ -64,7 +64,7 @@ export default function CardCursos({
   nome: string;
   faculdades: ListaFaculdades;
   setPpCNome: Dispatch<SetStateAction<string>>;
-  setPpCFaculdades: Dispatch<SetStateAction<Faculdade[]>>;
+  setPpCFaculdades: Dispatch<SetStateAction<ListaFaculdades>>;
   setPopupCursos: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
@@ -79,7 +79,7 @@ export default function CardCursos({
           className={styles.btnVerMais}
           onClick={() => {
             setPpCNome(nome);
-            /* setPpCFaculdades(faculdades); */
+            setPpCFaculdades(faculdades);
             setPopupCursos(true);
           }}
         >
