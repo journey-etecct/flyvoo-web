@@ -1,0 +1,56 @@
+.card {
+  margin: 10px 10em;
+  height: fit-content;
+  padding: 2em;
+  display: flex;
+  overflow: hidden;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.imagem {
+  align-self: center;
+  position: relative;
+  width: 130px;
+  height: 120px;
+  border-radius: 22px;
+  margin-right: 2em;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.info h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.info Button {
+  align-self: flex-end;
+}
+
+.btnVerMais {
+  color: white;
+  border-radius: 50px;
+  background-color: var(--btnPrimary);
+  padding: 1em 2em;
+  opacity: 1;
+  transition: opacity 100ms, background-color 100ms;
+  border: 0;
+  cursor: pointer;
+}
+
+.btnVerMais:hover {
+  background-color: var(--btnPrimaryHover);
+}
+
+.btnVerMais:active {
+  opacity: 0.5;
+}

@@ -28,26 +28,45 @@ import EsqueceuSenha from "./esqueceuSenha";
 import VericacaoEmail from "./verificaçãoEmail";
 import ConcluirCadastro from "./concluirCadastro";
 
+export type ListaFaculdades = {
+  UNESP?: Faculdade;
+  UNIFESP?: Faculdade;
+  USP?: Faculdade;
+  "Universidade Cruzeiro do Sul"?: Faculdade;
+  IFSP?: Faculdade;
+  SPTech?: Faculdade;
+};
+export type Curso = {
+  nome: string;
+  "faculdade(s)": ListaFaculdades;
+};
+export type Faculdade = string;
+
 export default function Root() {
   const cookies = useCookies();
-  var logado: boolean = cookies.get("logado") == "true";
+  var logado: boolean = cookies.get("logado") === "true";
   const [dark, setDark] = useState(true);
+  const [popupCursos, setPopupCursos] = useState(false);
+  const [ppCNome, setPpCNome] = useState("");
+  const [ppCFaculdades, setPpCFaculdades] = useState<ListaFaculdades>({});
 
   useEffect(() => {
-    const html = document.documentElement;
-    html.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
-
-    mudarTema(cookies.get("dark") == "true");
-
-    $("#navbar")
-      .on("mouseenter", () => {
-        $("#conteudo").css("filter", "blur(2px)");
-      })
-      .on("mouseleave", () => {
-        $("#conteudo").css("filter", "blur(0)");
+    $(() => {
+      const html = document.documentElement;
+      html.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
       });
+
+      mudarTema(cookies.get("dark") == "true");
+
+      $("#navbar")
+        .on("mouseenter", () => {
+          $("#conteudo").css("filter", "blur(2px)");
+        })
+        .on("mouseleave", () => {
+          $("#conteudo").css("filter", "blur(0)");
+        });
+    });
   });
 
   // Verifica se está na página de questões
@@ -71,7 +90,16 @@ export default function Root() {
           >
             <Routes>
               <Route path="/" Component={Home} index></Route>
-              <Route path="/cursos" Component={Cursos}></Route>
+              <Route
+                path="/cursos"
+                element={
+                  <Cursos
+                    setPpCNome={setPpCNome}
+                    setPpCFaculdades={setPpCFaculdades}
+                    setPopupCursos={setPopupCursos}
+                  />
+                }
+              ></Route>
               <Route path="/carreiras" Component={Empresas}></Route>
               <Route path="/teste" Component={Teste}></Route>
               <Route
